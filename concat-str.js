@@ -1,1 +1,1 @@
-const concatstr = (str1,str2) => str1 + "" + str2
+const concatStr = (str1,str2) => str1 + "" + str2
