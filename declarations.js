@@ -1,5 +1,5 @@
 const escapeStr = "``\\/\"'"
-const arr = [2,"4"]
+const arr = [4,"2"]
 const obj = {
     str:"hello js from the first object",
     num:1,
