@@ -10,5 +10,5 @@ const planets = {
 }
 
 function dogYears(planet,seconds) {
-    return (seconds/60/60/24/365.25) * 7 * planets[planet]
+    return +((seconds/60/60/24/365.25) * 7 * planets[planet]).toFixed(2)
 }
