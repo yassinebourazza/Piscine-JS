@@ -8,5 +8,4 @@ is.num = (n) => (typeof n == "number")
    is.obj = (n)=> (typeof n == "object" && !Array.isArray(n) && n !== null)
   is.fun = (n)=> (typeof n == "function")
  is.falsy = (n)=> !n
-is.truthy = (n) => !is.truthy(n)
-
+is.truthy = (n) => !is.falsy(n)
