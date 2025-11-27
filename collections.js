@@ -42,14 +42,14 @@ function strToObj(str) {
 const superTypeOf = (any) => 
     (typeof any.set == "function") ? "Map" :
     (typeof any.add == "function") ? "Set":
-    (typeof anyn == "number") ? "number" :
+    (typeof anyn == "number") ? "Number" :
     (Number.isNaN(any)) ? "NaN" :
-    (typeof any == "string") ? "string" :
-    (typeof any == "boolean") ? "boolean" :
-    (typeof any == "undefined") ? "undefined" :
-    (Array.isArray(any)) ? "array" :
-    (typeof any == "object" && !Array.isArray(any) && any !== null) ? "object" :
-    (typeof any == "function") ? "function" : "null";
+    (typeof any == "string") ? "String" :
+    (typeof any == "boolean") ? "Boolean" :
+    (typeof any == "undefined") ? "Undefined" :
+    (Array.isArray(any)) ? "Array" :
+    (typeof any == "object" && !Array.isArray(any) && any !== null) ? "Object" :
+    (typeof any == "function") ? "Function" : "Null";
 
 
 
