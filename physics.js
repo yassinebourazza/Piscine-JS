@@ -1,14 +1,4 @@
-const obj = { d: 10, t: 2, Δv: 100 }
-function getAcceleration(obj) {
-    if (obj.f !== undefined && obj.m != undefined && obj.m != 0) {
-        return obj.f/obj.m
-    } else if (obj.Δv !== undefined && obj.Δt != undefined && obj.Δt != 0) {
-        return obj.Δv/obj.Δt
-    } else if (obj.d !== undefined && obj.t != undefined && obj.t != 0) {
-        return (2*obj.d)/(obj.t**2)
-    } else {
-        return "impossible"
-    }
-}
-
-console.log(getAcceleration(obj))
+const getAcceleration2=(obj) =>
+    (!Number.isNaN(obj.f/obj.m) && obj.m!=0) ? obj.f/obj.m:
+    (!Number.isNaN(obj.Δv/obj.Δvt) && obj.Δt!=0) ? obj.Δv/obj.Δv:
+    (!Number.isNaN(obj.d*2/obj.t**2) && obj.m!=0) ? 2*obj.d/obj.t**2:"impossble";
