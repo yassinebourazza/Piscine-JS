@@ -9,8 +9,3 @@
      is.fun = (n)=> (typeof n == "function")
     is.truthy = (n)=> (n == 0 || nber.isNaN(n) || n == null)
    is.falsy = (n) => !is.truthy(n)
-
-
-
-
-console.log(num([0, NaN]))
