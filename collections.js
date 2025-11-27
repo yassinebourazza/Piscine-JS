@@ -46,7 +46,7 @@ const superTypeOf = (any) =>
     (Number.isNaN(any)) ? "NaN" :
     (typeof any == "string") ? "String" :
     (typeof any == "boolean") ? "Boolean" :
-    (typeof any == "undefined") ? "Undefined" :
+    (typeof any == "undefined") ? "undefined" :
     (Array.isArray(any)) ? "Array" :
     (typeof any == "object" && !Array.isArray(any) && any !== null) ? "Object" :
     (typeof any == "function") ? "Function" : "null";
@@ -64,6 +64,7 @@ console.log(superTypeOf([1, 2, 1, 3]));
 console.log(superTypeOf({}));
 console.log(superTypeOf(666));
 console.log(superTypeOf(null));
+console.log(superTypeOf(undefined));
 
 
 
