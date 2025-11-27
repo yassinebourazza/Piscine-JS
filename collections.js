@@ -40,8 +40,8 @@ function strToObj(str) {
 }
 
 const superTypeOf = (any) => 
-    (typeof any.set == "function") ? "Map" :
-    (typeof any.add == "function") ? "Set":
+    (any != null && typeof any.set == "function") ? "Map" :
+    (any != null && typeof any.add == "function") ? "Set":
     (typeof any == "number") ? "Number" :
     (Number.isNaN(any)) ? "NaN" :
     (typeof any == "string") ? "String" :
@@ -49,7 +49,7 @@ const superTypeOf = (any) =>
     (typeof any == "undefined") ? "Undefined" :
     (Array.isArray(any)) ? "Array" :
     (typeof any == "object" && !Array.isArray(any) && any !== null) ? "Object" :
-    (typeof any == "function") ? "Function" : "Null";
+    (typeof any == "function") ? "Function" : "null";
 
 console.log(superTypeOf([1,5,4,8,6,2,1,4]));
 console.log(superTypeOf([1,5,4,8,6,2,1,4]));
@@ -63,6 +63,7 @@ console.log(superTypeOf({ x: 45, y: 75, radius: 24 }));
 console.log(superTypeOf([1, 2, 1, 3]));
 console.log(superTypeOf({}));
 console.log(superTypeOf(666));
+console.log(superTypeOf(null));
 
 
 
