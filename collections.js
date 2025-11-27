@@ -38,3 +38,18 @@ function arrToObj(arr) {
 function strToObj(str) {
     return arrToObj(str)
 }
+
+const superTypeOf = (any) => 
+    (typeof any.set == "function") ? "Map" :
+    (typeof any.add == "function") ? "Set":
+    (typeof anyn == "number") ? "number" :
+    (Number.isNaN(any)) ? "NaN" :
+    (typeof any == "string") ? "string" :
+    (typeof any == "boolean") ? "boolean" :
+    (typeof any == "undefined") ? "undefined" :
+    (Array.isArray(any)) ? "array" :
+    (typeof any == "object" && !Array.isArray(any) && any !== null) ? "object" :
+    (typeof any == "function") ? "function" : "null";
+
+
+
