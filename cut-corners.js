@@ -69,9 +69,3 @@ function trunc(numbers) {
     }
     return arr
 }
-
-const nums = [3.7, -3.7, 3.1, -3.1]
-console.log(round(nums))
-console.log(floor(nums))
-console.log(trunc(nums))
-console.log(ceil(nums))
