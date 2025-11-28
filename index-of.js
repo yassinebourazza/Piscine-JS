@@ -9,7 +9,7 @@ function indexOf(arr,compare,start=0) {
 
 function lastIndexOf(arr, compare,start=0) {
     let count = -1
-     for (let index= start ; index < arr.length;index++) {
+     for (let index= start ; index >= 0;index--) {
         if (arr[index] === compare) {
             count = index
         }
@@ -25,3 +25,5 @@ function includes(arr, compare,start=0) {
     }
     return false
 }
+
+console.log(lastIndexOf(['t', 0, 0, 't'], 't', 2));
