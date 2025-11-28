@@ -7,7 +7,7 @@ function round(numbers) {
         sign = -1
     }
     let count = 0
-    while (num > 0.5) {
+    while (num >= 0.5) {
         count++
         num--
     }
@@ -69,3 +69,4 @@ function trunc(numbers) {
     }
     return arr
 }
+
