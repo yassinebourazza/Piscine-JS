@@ -12,7 +12,7 @@ function blockChain(data, prev = false) {
     obj.hash = hashCode(""+obj.index+obj.prev.hash+JSON.stringify(obj.data));
   }
 
-  obj.chain = (data) => blockChain(data, {index:obj.index,hash:obj.hash});
+  obj.chain = (data) => blockChain(data, obj);
 
   return obj;
 }
