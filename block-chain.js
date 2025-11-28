@@ -1,25 +1,19 @@
-const hashCode = str =>
-(
-  [...str].reduce((h, c) => (h = (h << 5) - h + c.charCodeAt(0)) & h, 0) >>> 0
-).toString(36)
-
-
 function blockChain(data, prev = false) {
-  
+  console.log(prev)
   const obj = {};
   obj.data = data;
 
   if (!prev) {
     obj.prev = { index: 0, hash: "0" };
-    obj.index = 1;
-    obj.hash = hashCode("" +obj.index+prev.hash+JSON.stringify(obj.data));
+    obj.index = 1;    
+    obj.hash = hashCode("" +obj.index+obj.prev.hash+JSON.stringify(obj.data));
   } else {
     obj.prev = prev;
     obj.index = prev.index + 1;
-    obj.hash = hashCode(""+obj.index+prev.hash+JSON.stringify(obj.data));
+    obj.hash = hashCode(""+obj.index+obj.prev.hash+JSON.stringify(obj.data));
   }
 
-  obj.chain = (data) => blockChain(data, prev);
+  obj.chain = (data) => blockChain(data, {index:obj.index,hash:obj.hash});
 
   return obj;
 }
