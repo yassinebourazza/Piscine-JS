@@ -61,5 +61,3 @@ function modulo(num1,num2) {
     }
     return num1
 }
-
-console.log(modulo(-123, 22));
