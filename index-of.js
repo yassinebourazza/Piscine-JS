@@ -1,5 +1,5 @@
-function indexOf(arr,compare) {
-    for (let index in arr) {
+function indexOf(arr,compare,start=0) {
+    for (let index= start ; index < arr.length;index++) {
         if (arr[index] === compare) {
             return +index
         }
@@ -7,9 +7,9 @@ function indexOf(arr,compare) {
     return -1
 }
 
-function lastIndexOf(arr, compare) {
+function lastIndexOf(arr, compare,start=0) {
     let count = -1
-     for (let index in arr) {
+     for (let index= start ; index < arr.length;index++) {
         if (arr[index] === compare) {
             count = index
         }
@@ -17,8 +17,8 @@ function lastIndexOf(arr, compare) {
     return +count
 }
 
-function includes(arr, compare) {
-    for (let index in arr) {
+function includes(arr, compare,start=0) {
+    for (let index= start ; index < arr.length;index++) {
         if (arr[index] === compare) {
             return true
         }
