@@ -1,4 +1,17 @@
 function round(numbers) {
+    if (typeof numbers =="number") {
+        let sign = 1
+    if (numbers<0) {
+        numbers = -numbers
+        sign = -1
+    }
+    let count = 0
+    while (numbers >= 0.5) {
+        count++
+        numbers--
+    }
+     return count * sign
+    }
     let arr = []
     for (let num of numbers) {
     let sign = 1
@@ -17,6 +30,19 @@ function round(numbers) {
 }
 
 function ceil(numbers) {
+    if (typeof numbers =="number") {
+    let sign = 1
+    if (numbers<0) {
+        numbers = -numbers-1
+        sign = -1
+    }
+    let count = 0
+    while (numbers > 0) {
+        count++
+        numbers--
+    }
+     return count * sign
+    }
      let arr = []
     for (let num of numbers) {
     let sign = 1
@@ -35,6 +61,19 @@ function ceil(numbers) {
 }
 
 function floor(numbers) {
+     if (typeof numbers =="number") {
+        let sign = 1
+    if (numbers<0) {
+        numbers = -numbers -1
+        sign = -1
+    }
+    let count = 0
+    while (numbers > 0) {
+        count++
+        numbers--
+    }
+     return count * sign-1
+     }
      let arr = []
     for (let num of numbers) {
      let sign = 1
@@ -43,7 +82,7 @@ function floor(numbers) {
         sign = -1
     }
     let count = 0
-    while (num > 0) {
+    while (num >= 0) {
         count++
         num--
     }
@@ -53,6 +92,19 @@ function floor(numbers) {
 }
 
 function trunc(numbers) {
+    if (typeof numbers =="number") {
+            let sign = 1
+    if (numbers<0) {
+        numbers = -numbers
+        sign = -1
+    }
+    let count = 0
+    while (numbers > 1) {
+        count++
+        numbers--
+    }
+     return(count * sign)
+    }
     let arr = []
     for (let num of numbers) {
         let sign = 1
@@ -69,4 +121,3 @@ function trunc(numbers) {
     }
     return arr
 }
-
