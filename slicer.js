@@ -1,4 +1,4 @@
-function slice(strOrArr, start,end) {
+function slice(strOrArr, start=0,end=strOrArr.length) {
     if (start <0 || start > strOrArr.length) {
         return ""
     }
