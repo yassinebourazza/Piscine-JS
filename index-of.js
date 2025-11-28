@@ -7,7 +7,7 @@ function indexOf(arr,compare,start=0) {
     return -1
 }
 
-function lastIndexOf(arr, compare,start=0) {
+function lastIndexOf(arr, compare,start=arr.length) {
     let count = -1
      for (let index= start ; index >= 0;index--) {
         if (arr[index] === compare) {
@@ -26,4 +26,4 @@ function includes(arr, compare,start=0) {
     return false
 }
 
-console.log(lastIndexOf(['t', 0, 0, 't'], 't', 2));
+console.log(lastIndexOf([1, 2, 3, 4, 5, 4, 3, 2, 1], 2));
