@@ -48,12 +48,12 @@ function modulo(num1,num2) {
     let sign = 1
     if (num2<0) {
         num2 = -num2
-        sign = -sign
     }
     if (num1<0) {
         num1 = -num1
         sign = -sign
     }
+
     if (num1===num2 || num1 == 0) {
         return 0
     } else if (num1< num2) {
@@ -67,3 +67,4 @@ function modulo(num1,num2) {
     }
     return num1
 }
+
