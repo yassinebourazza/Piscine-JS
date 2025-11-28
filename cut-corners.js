@@ -1,55 +1,58 @@
-function round(number) {
-    let sign = 1
-    if (number<0) {
-        number = -number
-        sign = -1
+function getNumber(number) {
+    let sub = 1
+    let result = 0
+    while (number>=1) {
+        number/=10
+        sub*=10
     }
-    let count = 0
-    while (number >= 0.5) {
-        count++
-        number--
+    sub = sub/10
+    number *= sub*10
+    while (number >= 1) {
+        if (number > sub) {
+            number-=sub
+            result+=sub
+        } else {
+            sub/=10
+        }
     }
-    return count * sign
-}
-
-function ceil(number) {
-    let sign = 1
-    if (number<0) {
-        number = -number-1
-        sign = -1
-    }
-    let count = 0
-    while (number > 0) {
-        count++
-        number--
-    }
-    return count * sign
-}
-
-function floor(number) {
-     let sign = 1
-    if (number<0) {
-        number = -number -1
-        sign = -1
-    }
-    let count = 0
-    while (number >= 0) {
-        count++
-        number--
-    }
-    return count * sign -1
+    return result
 }
 
 function trunc(number) {
-        let sign = 1
+    let flag 
     if (number<0) {
+        number= -number
+        flag = true
+    }
+    return (flag) ? -getNumber(number) : getNumber(number);
+}
+
+function floor(number) {
+    let flag 
+    if(number < 0) {
         number = -number
-        sign = -1
+        flag = true
     }
-    let count = 0
-    while (number >= 1) {
-        count++
-        number--
+    return (flag) ? -getNumber(number)-1 : getNumber(number);
+}
+
+function ceil(number) {
+    let flag 
+    if(number < 0) {
+        number = -number
+        flag = true
     }
-    return count * sign
+    return (flag) ? -getNumber(number) : getNumber(number)+1;
+}
+
+function round(number) {
+    let flag 
+    if(number < 0) {
+        number = -number
+        flag = true
+    }
+    if (number-getNumber(number) >= 0.5) {
+        return (flag) ? -getNumber(number)-1 : getNumber(number)+1;
+    }
+    return (flag) ? -getNumber(number) : getNumber(number);
 }
