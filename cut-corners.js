@@ -1,56 +1,77 @@
-function round(number) {
+function round(numbers) {
+    let arr = []
+    for (let num of numbers) {
     let sign = 1
-    if (number<0) {
-        number = -number
+    if (num<0) {
+        num = -num
         sign = -1
     }
     let count = 0
-    while (number > 0.5) {
+    while (num > 0.5) {
         count++
-        number--
+        num--
     }
-    return count * sign
+     arr.push(count * sign)
+    }
+    return arr
 }
 
-function ceil(number) {
+function ceil(numbers) {
+     let arr = []
+    for (let num of numbers) {
     let sign = 1
-    if (number<0) {
-        number = -number-1
+    if (num<0) {
+        num = -num-1
         sign = -1
     }
     let count = 0
-    while (number > 0) {
+    while (num > 0) {
         count++
-        number--
+        num--
     }
-    return count * sign
+     arr.push(count * sign)
+    }
+    return arr
 }
 
-function floor(number) {
+function floor(numbers) {
+     let arr = []
+    for (let num of numbers) {
      let sign = 1
-    if (number<0) {
-        number = -number -1
+    if (num<0) {
+        num = -num -1
         sign = -1
     }
     let count = 0
-    while (number > 0) {
+    while (num > 0) {
         count++
-        number--
+        num--
     }
-    return count * sign -1
+    arr.push(count * sign-1)
+    }
+    return arr
 }
 
-function trunc(number) {
+function trunc(numbers) {
+    let arr = []
+    for (let num of numbers) {
         let sign = 1
-    if (number<0) {
-        number = -number
+    if (num<0) {
+        num = -num
         sign = -1
     }
     let count = 0
-    while (number > 1) {
+    while (num > 1) {
         count++
-        number--
+        num--
     }
-    return count * sign
+    arr.push(count * sign)
+    }
+    return arr
 }
 
+const nums = [3.7, -3.7, 3.1, -3.1]
+console.log(round(nums))
+console.log(floor(nums))
+console.log(trunc(nums))
+console.log(ceil(nums))
