@@ -55,9 +55,3 @@ function modulo(num1,num2) {
     }
     return num1
 }
-
-console.log(122%0);
-console.log(modulo(22,50));
-console.log(modulo(500,50));
-console.log(modulo(22,0));
-console.log(modulo(-122,-2));
