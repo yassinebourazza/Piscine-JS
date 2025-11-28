@@ -11,10 +11,10 @@ function lastIndexOf(arr, compare,start=0) {
     let count = -1
      for (let index= start ; index >= 0;index--) {
         if (arr[index] === compare) {
-            count = index
+            return +index
         }
     }
-    return +count
+    return -1
 }
 
 function includes(arr, compare,start=0) {
