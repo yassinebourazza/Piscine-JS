@@ -1,5 +1,4 @@
 function blockChain(data, prev = false) {
-  console.log(prev)
   const obj = {};
   obj.data = data;
 
@@ -17,9 +16,3 @@ function blockChain(data, prev = false) {
 
   return obj;
 }
-
-const first = blockChain({ a: 1 })
-const second = first.chain({ hello: 'world' })
-
-console.log(first)
-console.log(second)
