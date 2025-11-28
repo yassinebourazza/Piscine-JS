@@ -1,7 +1,10 @@
 function slice(strOrArr, start=0,end=strOrArr.length) {
     if (start <0) {
         start = strOrArr.length+start
-    }    
+    }  
+     if (end <0) {
+        end = strOrArr.length+end
+    }      
     if (end > strOrArr) {
         end = strOrArr.length
     }
