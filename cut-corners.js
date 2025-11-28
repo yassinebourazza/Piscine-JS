@@ -7,7 +7,7 @@ function getNumber(number) {
     }
     sub = sub/10
     number *= sub*10
-    while (number >= 1) {
+    while (number > 1) {
         if (number > sub) {
             number-=sub
             result+=sub
@@ -38,10 +38,13 @@ function floor(number) {
 
 function ceil(number) {
     let flag 
+    if (number==0) {
+        return 0
+    }
     if(number < 0) {
         number = -number
         flag = true
-    }
+    }    
     return (flag) ? -getNumber(number) : getNumber(number)+1;
 }
 
