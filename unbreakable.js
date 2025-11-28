@@ -1,25 +1,31 @@
-function split(str) {
-    let flag =0
+function split(str,spliter) {
+    let startFlag =0
+    let endFlag = 0
     let result = []
+    let spliterLength = spliter.length
     let start = false
+    
     for (let i = 0; i< str.length;i++) {
-        if (str[0]==' ') {
+        if (str.slice(i,i+spliterLength)==spliter) {
             start = true
         }
-        if (i!=0 && str[i]!=' ' && str[i-1]==' ') {
-            flag=i
-        } else if (i!= str.length-1 && str[i]==' ' && str[i-1]!=' ') {
-            result.push(str.slice(flag,i))
-        }
+        if (i!=0 && str.slice(i,i+spliterLength)==spliter) {
+            endFlag = i
+            result.push(str.slice(startFlag,endFlag))
+            startFlag = i+spliterLength
+        } 
     }
     if (str[str.length-1] !== " ") {
-        result.push(str.slice(flag))
+        result.push(str.slice(startFlag))
     }
 
-    if (start) {
-        return result.slice(1)
-    }
     return result
 }
 
-console.log(split(' hello  world  from  js  '));
+function join(arr,joiner=',') {
+    let str = ""
+    for (let key of arr) {
+        str += key + joiner
+    }
+    return str.slice(0,-1)
+}
