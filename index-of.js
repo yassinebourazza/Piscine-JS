@@ -7,8 +7,7 @@ function indexOf(arr,compare,start=0) {
     return -1
 }
 
-function lastIndexOf(arr, compare,start=arr.length) {
-    let count = -1
+function lastIndexOf(arr, compare,start=arr.length-1) {
      for (let index= start ; index >= 0;index--) {
         if (arr[index] === compare) {
             return +index
