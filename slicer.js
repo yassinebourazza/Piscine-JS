@@ -1,7 +1,7 @@
 function slice(strOrArr, start=0,end=strOrArr.length) {
-    if (start <0 || start > strOrArr.length) {
-        return ""
-    }
+    if (start <0) {
+        start = strOrArr.length+start
+    }    
     if (end > strOrArr) {
         end = strOrArr.length
     }
@@ -19,7 +19,3 @@ function slice(strOrArr, start=0,end=strOrArr.length) {
     }
     return str
 }
-
-
-console.log(slice([2,4,8,7,6],2,4));
-console.log(slice("helloworld",2,4));
