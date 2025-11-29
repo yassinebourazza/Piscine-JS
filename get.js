@@ -13,11 +13,12 @@ function rucersion(obj,paths) {
         if (obj[paths[index]]==undefined) {
             return undefined
         }
-        if (paths[+index+1] != undefined) {
-            return obj[paths[index]]+ "."+ paths[+index+1]
-        }
-           
+        
         if (typeof obj[paths[index]] == "function") {
+            if (paths[+index+1] != undefined) {
+                return obj[paths[index]].toString
+            }
+            
             return obj[paths[index]]
         } 
         return obj[paths[index]]
@@ -25,12 +26,14 @@ function rucersion(obj,paths) {
 }
 
     // "toString"
-    //  let x = 5
-    //  const t = (x) => x;
-    //  console.log(get({ a: [{ b: t }] }, 'a.0.b.toString'));
+//   let x = 5
+//   const t = (x) => x;
+//      console.log(get({ a: [{ b: t }] }, 'a.0.b.toString'));
 // console.log(get({ a: [{ b: t }] }, 'a.0.b'));
 // console.log(get({ a: [{ b: "hello" }] }, 'a.0.b'));
 // console.log(get({ b: "hello" }, 'b'));
 // console.log(get({ key: 'value' }, 'nx'));
 // console.log(get({ nested: { key: 'value' } }, 'nx.nx'));
 
+// console.log(t);
+// console.log(t.toString);
