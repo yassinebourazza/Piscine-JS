@@ -20,8 +20,8 @@ function rucersion(obj,paths) {
 }
 
 // const t = "hello"
-// console.log(get({ a: [{ b: t }] }, 'a.0.b.toString'));
+// console.log(get({ a: [{ b: t }] }, 'a.0.b.toString().call()'));
 // console.log(get({ a: [{ b: t }] }, 'a.0.b'));
 // console.log(get({ a: [{ b: "hello" }] }, 'a.0.b'));
 // console.log(get({ b: "hello" }, 'b'));
-console.log(get({ key: 'value' }, 'nx'));
+// console.log(get({ key: 'value' }, 'nx'));
