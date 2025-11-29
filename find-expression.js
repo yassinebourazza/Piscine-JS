@@ -1,3 +1,5 @@
+const add4 = '+4'
+const mul2 = '*2'
 function findExpression(num) {
     let str= '1'
     let compare = 1
@@ -15,3 +17,6 @@ function findExpression(num) {
     }
     return str
 }
+
+
+console.log((findExpression(14)))
