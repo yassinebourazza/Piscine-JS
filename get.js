@@ -1,6 +1,6 @@
 function get(obj,path) {
     let paths = path.split('.')
-    result = rucersion(obj,paths)
+    let result = rucersion(obj,paths)
     return result
 }
 
