@@ -2,9 +2,9 @@ function pyramid(str,num) {
     let result=''
     for (let i = 1; i <= num;i++ ) {
         if (i ==num) {
-            result +=  str.repeat(i) + str.repeat(i-1)
+            result +=  str.repeat(2*i-1) 
         } else {
-            result += ' '.repeat((num-i)*str.length) + str.repeat(i) + str.repeat(i-1) + '\n'
+            result += ' '.repeat((num-i)*str.length) + str.repeat(2*i-1)  + '\n'
 
         }
     }
