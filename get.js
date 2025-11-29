@@ -24,10 +24,10 @@ function rucersion(obj,paths) {
     }
 }
 
-"toString"
- let x = 5
- const t = (x) => x;
- console.log(get({ a: [{ b: t }] }, 'a.0.b.toString'));
+    // "toString"
+    //  let x = 5
+    //  const t = (x) => x;
+    //  console.log(get({ a: [{ b: t }] }, 'a.0.b.toString'));
 // console.log(get({ a: [{ b: t }] }, 'a.0.b'));
 // console.log(get({ a: [{ b: "hello" }] }, 'a.0.b'));
 // console.log(get({ b: "hello" }, 'b'));
