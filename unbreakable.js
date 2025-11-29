@@ -4,6 +4,10 @@ function split(str,spliter) {
     let spliterLength = spliter.length
     
     for (let i = 0; i<= str.length-spliterLength;i++) {
+        if (spliter=="") {
+            result.push(str[i])
+            continue
+        }
         if (str.slice(i,i+spliterLength)==spliter) {        
                 result = [...noLeak(result,str,startFlag,i)]
                 startFlag = i+spliterLength
@@ -27,8 +31,3 @@ function join(arr,joiner=',') {
     }
     return str.slice(0,-joiner.length)
 }
-
-console.log(join(["HTHTR",1651,65,1684,53,486,34,68,468,43,58168,4186,516,4,51,8684,163,8185,1861,684],'++'));
-console.log(split("HTHTR,1651,65,1684,53,486,534,68,468,43,58168,4186,516,4,51,8684,,163,8185,1861,684,",',4'));
-
-
