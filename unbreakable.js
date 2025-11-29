@@ -5,7 +5,9 @@ function split(str,spliter) {
     
     for (let i = 0; i<= str.length-spliterLength;i++) {
         if (spliter=="") {
-            result.push(str[i])
+            if (i < str.length) {
+                result.push(str[i])
+            }
             continue
         }
         if (str.slice(i,i+spliterLength)==spliter) {        
@@ -14,7 +16,9 @@ function split(str,spliter) {
                 i += spliterLength-1 
         } 
     }
-    result.push(str.slice(startFlag))
+    if (spliter!="") {
+        result.push(str.slice(startFlag))
+    }
 
     return  result
 }
