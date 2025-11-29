@@ -5,9 +5,7 @@ function sums(num) {
 }
 
 function rec(arr,num,compare=2,result = [arr.slice()]) {
-    saveArr= arr.slice()
-    console.log(compare);
-    console.log(num,'---');
+    let saveArr= arr.slice()
         for (let i=0 ;i< arr.length;i++) {
         if (arr[i]!=compare && i != arr.length-1) {
             
@@ -15,7 +13,6 @@ function rec(arr,num,compare=2,result = [arr.slice()]) {
             for (let j=1; j <compare;j++) {           
                 arr.pop()
             }
-            console.log('for',arr,compare);
             result.push(arr.slice())
         }
     }
@@ -25,4 +22,4 @@ function rec(arr,num,compare=2,result = [arr.slice()]) {
     }
     return result
 }
-console.log(sums(5));
+console.log(sums(4));
