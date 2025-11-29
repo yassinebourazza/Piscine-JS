@@ -1,4 +1,4 @@
-function findexpression(num) {
+function findExpression(num) {
     let str= '1'
     let compare = 1
     while(compare<num) {
