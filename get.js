@@ -18,14 +18,16 @@ function rucersion(obj,paths) {
         }
            
         if (typeof obj[paths[index]] == "function") {
-            return ""+obj[paths[index]]
+            return obj[paths[index]]
         } 
         return obj[paths[index]]
     }
 }
 
-// const t = 5
-// console.log(get({ a: [{ b: t }] }, 'a.0.b.toString().call()'));
+//"toString"
+// let x = 5
+// const t = (x) => x;
+// console.log(get({ a: [{ b: t }] }, 'a.0.b.toString   .call()'));
 // console.log(get({ a: [{ b: t }] }, 'a.0.b'));
 // console.log(get({ a: [{ b: "hello" }] }, 'a.0.b'));
 // console.log(get({ b: "hello" }, 'b'));
