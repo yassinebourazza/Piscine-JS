@@ -24,9 +24,9 @@ function rucersion(obj,paths) {
     }
 }
 
-const t = 5
+// const t = 5
 // console.log(get({ a: [{ b: t }] }, 'a.0.b.toString().call()'));
-console.log(get({ a: [{ b: t }] }, 'a.0.b'));
+// console.log(get({ a: [{ b: t }] }, 'a.0.b'));
 // console.log(get({ a: [{ b: "hello" }] }, 'a.0.b'));
 // console.log(get({ b: "hello" }, 'b'));
 // console.log(get({ key: 'value' }, 'nx'));
