@@ -4,11 +4,11 @@ function pyramid(str,num) {
         if (i ==num) {
             result +=  str.repeat(i) + str.repeat(i-1)
         } else {
-            result += ' '.repeat(num-i) + str.repeat(i) + str.repeat(i-1) + '\n'
+            result += ' '.repeat((num-i)*str.length) + str.repeat(i) + str.repeat(i-1) + '\n'
 
         }
     }
     return result
 }
 
-console.log(pyramid('*',50))
+console.log(pyramid('*',5))
