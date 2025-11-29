@@ -1,21 +1,17 @@
 function split(str,spliter) {
     let startFlag =0
-    let endFlag = 0
     let result = []
     let spliterLength = spliter.length
     
-    for (let i = 0; i< str.length;i++) {
-        if (i!=0 && str.slice(i,i+spliterLength)==spliter) {
-            endFlag = i
-            console.log(startFlag);
-            
-            result.push(str.slice(startFlag,endFlag))
-            startFlag = i+spliterLength
+    for (let i = 0; i<= str.length-spliterLength;i++) {
+        if (str.slice(i,i+spliterLength)==spliter) {        
+                result.push(str.slice(startFlag,i))
+                startFlag = i+spliterLength
+                i += spliterLength-1 
         } 
     }
-    if (str[str.length-1] !== " ") {
-        result.push(str.slice(startFlag))
-    }
+    result.push(str.slice(startFlag))
+    
 
     return result
 }
@@ -25,10 +21,5 @@ function join(arr,joiner=',') {
     for (let key of arr) {
         str += key + joiner
     }
-    return str.slice(0,-1)
+    return str.slice(0,-joiner.length)
 }
-
-
-console.log(split('rrrr', 'rr'));
-console.log(split('rrirr', 'rr')); 
-console.log(split('rehjrj rej rej  erj rej re ', ' ')); 
