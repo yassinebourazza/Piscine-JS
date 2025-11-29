@@ -4,6 +4,8 @@ function get(obj,path) {
     return result
 }
 function rucersion(obj,paths) {
+    console.log(obj);
+    
     for (let index in paths) {                
         if (typeof obj[paths[index]] == 'object' && obj != null) {
             return rucersion(obj[paths[index]],paths.slice(1))
@@ -19,9 +21,9 @@ function rucersion(obj,paths) {
     }
 }
 
-// const t = "hello"
+//const t = 5
 // console.log(get({ a: [{ b: t }] }, 'a.0.b.toString().call()'));
-// console.log(get({ a: [{ b: t }] }, 'a.0.b'));
+//console.log(get({ a: [{ b: t }] }, 'a.0.b'));
 // console.log(get({ a: [{ b: "hello" }] }, 'a.0.b'));
 // console.log(get({ b: "hello" }, 'b'));
 // console.log(get({ key: 'value' }, 'nx'));
