@@ -8,10 +8,10 @@ function findexpression(num) {
         } else {
             str = add4(str)
             compare+=4
-        }        
+        }
     }
     if (compare!=num) {
         return undefined
     }
-    return compare
+    return str
 }
