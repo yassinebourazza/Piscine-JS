@@ -8,11 +8,14 @@ function rucersion(obj,paths) {
         if (typeof obj[paths[index]] == 'object' && obj != null) {
             return rucersion(obj[paths[index]],paths.slice(1))
         } 
-            if (paths[+index+1] != undefined) {
-                return obj[paths[index]] + "." + paths[+index+1]
-            } 
+        if (paths[+index+1] != undefined) {
+            return obj[paths[index]] + "." + paths[+index+1]
+        }
+        if (obj[paths[index]]==undefined) {
+            return undefined
+        }
            
-            return ""+obj[paths[index]]
+        return ""+obj[paths[index]]
     }
 }
 
@@ -21,3 +24,4 @@ function rucersion(obj,paths) {
 // console.log(get({ a: [{ b: t }] }, 'a.0.b'));
 // console.log(get({ a: [{ b: "hello" }] }, 'a.0.b'));
 // console.log(get({ b: "hello" }, 'b'));
+console.log(get({ key: 'value' }, 'nx'));
