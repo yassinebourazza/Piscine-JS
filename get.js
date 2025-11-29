@@ -25,5 +25,5 @@ function rucersion(obj,paths) {
 // console.log(get({ a: [{ b: "hello" }] }, 'a.0.b'));
 // console.log(get({ b: "hello" }, 'b'));
 // console.log(get({ key: 'value' }, 'nx'));
-console.log(get({ nested: { key: 'value' } }, 'nx.nx'));
+// console.log(get({ nested: { key: 'value' } }, 'nx.nx'));
 
