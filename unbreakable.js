@@ -11,7 +11,6 @@ function split(str,spliter) {
         } 
     }
     result.push(str.slice(startFlag))
-    
 
     return result
 }
@@ -23,3 +22,4 @@ function join(arr,joiner=',') {
     }
     return str.slice(0,-joiner.length)
 }
+
