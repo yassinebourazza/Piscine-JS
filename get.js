@@ -14,7 +14,7 @@ function rucersion(obj,paths) {
             return undefined
         }
         if (paths[+index+1] != undefined) {
-            return obj[paths[index]] + "." + paths[+index+1]
+            return obj[paths[index]]+ "."+ paths[+index+1]
         }
            
         if (typeof obj[paths[index]] == "function") {
@@ -24,10 +24,10 @@ function rucersion(obj,paths) {
     }
 }
 
-//"toString"
-// let x = 5
-// const t = (x) => x;
-// console.log(get({ a: [{ b: t }] }, 'a.0.b.toString   .call()'));
+"toString"
+ let x = 5
+ const t = (x) => x;
+ console.log(get({ a: [{ b: t }] }, 'a.0.b.toString'));
 // console.log(get({ a: [{ b: t }] }, 'a.0.b'));
 // console.log(get({ a: [{ b: "hello" }] }, 'a.0.b'));
 // console.log(get({ b: "hello" }, 'b'));
