@@ -1,11 +1,7 @@
 // const add4 = ' +4'
 // const mul2 = ' *2'
-function findExpression(num) {
-    let res =recursion(num,'1')
-    return res
-}
 
-function recursion(num,str) {
+function findExpression(num,str='1') {
     if (num===1) {
         return str
     }
@@ -13,15 +9,11 @@ function recursion(num,str) {
         return undefined
     }
     let res = undefined
-    res = recursion(num-4,str)
-    if (res != undefined) {
-        return res + ' ' + add4
+    res = findExpression(num-4,str+add4)
+    if (!res) {
+        res = findExpression(num/2,str+mul2)
     } 
-    res = recursion(num/2,str)
-    if (res != undefined) {
-        //console.log("-----",res);
-        return res + ' ' + mul2
-    }
+    return res
 }
 
 // 1 +4
