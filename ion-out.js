@@ -1,11 +1,3 @@
-const ionOut = (str) => {
-    let result = []
-  let arr = str.match(/[^, ]+/g) 
-    for (let index in arr) {
-        arr[index] = arr[index].replace(/(?<=t)ion/,'')
-        if (arr[index].slice(-1)==='t') {
-            result.push(arr[index])
-        }
-    }
-    return result
-} 
+const ionOut = (str) => str.match(/\w+t(?=ion)/g)
+
+// console.log(ionOut(' 1st position is the vision of the 2nd position'));
