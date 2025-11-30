@@ -1,6 +1,9 @@
 function sameAmount(str,reg1,reg2) {
     let numReg1 = str.match(reg1)
-    let numReg2 = str.match(reg2)    
+    let numReg2 = str.match(reg2)
+    console.log(data);
+    console.log(numReg1,numReg2);
+    
     if (numReg1 ==null && numReg2 ==null) {
         return true
     }
