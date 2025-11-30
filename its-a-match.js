@@ -1,4 +1,4 @@
-normal = /hi/
-begin = /^hi/
-end = /hi$/
-beginEnd = /^hi$/
+const normal = /hi/
+const begin = /^hi/
+const end = /hi$/
+const beginEnd = /^hi$/
