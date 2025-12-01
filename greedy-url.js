@@ -1,21 +1,13 @@
-// const url = `qqq
-//         http:// 
-//         qqqq 
-//         q 
-//         qqqqq 
-//         https://something.com/hello 
-//         qqqqqqq 
-//         http://example.com/hello?you=something&something=you&hfsdh=hreh&rhtht=htr&rhtht=htr
-//         http://example.com/hello?you=something&something=you&hfsdh=hreh&rhtht=htr&something=you&hfsdh=hreh&rhtht=htr
-//         http://example.com/hello?you=something&something=you&hfsdh=hreh&rhtht=htr
-//         http://example.com/hello?you=something&something=you&something=you
-//         http://example.com/hello?you=something&something=you
-//         http://example.com/hello?you=somethin`
+// -   'http://hummm/how?how=come&same=[123,21]&you=nextperson&id=123312&next=123DSAD&ok=true&notOk=true',
+// -   'http://www.example.com/mypage.html?crcat=test&crsource=test&crkw=buy-a-loteasy',
+// -   'https://www.notherExample.com/catalog.asp?itemid=232&template=fresh&crcat=ppc&crsource=google&crkw=buy-a-lot&id=3&qwe=ty',
+// -   'http://www.example.com/catalog.asp?itemid=232&template=fresh&crcat=ppc&crsource=google&crkw=buy-a-lot'
+ 
 
 
 const getURL = (url) => url.match(/(https?):\/\/[\S]+/g)
-const greedyQuery = (url) => url.map(url => url.match(/(https?):\/\/\w+\.(com)\/\w+((\?|&)\w+=\w+){3}(&|\w|=)+/gm)) .filter(Boolean)
-const notSoGreedy = (url) => url.map(url => url.match(/(https?):\/\/\w+\.(com)\/\w+((\?|&)\w+=\w+){2,3}[^&]$/gm)).filter(Boolean)
+const greedyQuery = (url) =>  url.match(/(https?):\/\/[\S]+\/[\S]+((\?|&)[\S]+=[\S]+){3}/g)
+const notSoGreedy = (url) =>  url.match(/(https?):\/\/\w+\.(com)\/\w+((\?|&)\w+=\w+){2,3}[^&]$/g)
 
 // const dataSet = `qqq http:// qqqq q qqqqq https://something.com/hello qqqqqqq qhttp://example.com/hello?you=something&something=you qq 233.123.12.234 qw w wq wqw  wqw  ijnjjnfapsdbjnkfsdiqw klfsdjn fs fsd https://devdocs.io/javascript/global_objects/object/fromentries njnkfsdjnk sfdjn fsp fd192.168.1.123:8080 https://devdocs.io/javascript/global_objects/regexp/@@split
 // htpp://wrong/url hello %$& wf* ][½¬ http://correct/url?correct=yes è[}£§ https://nan-academy.github.io/js-training/?page=editor#data.nested 255.256.1233.2
@@ -45,6 +37,6 @@ const notSoGreedy = (url) => url.map(url => url.match(/(https?):\/\/\w+\.(com)\/
 //   'https://www.notherExample.com/catalog.asp?itemid=232&template=fresh&crcat=ppc&crsource=google&crkw=buy-a-lot&id=3&qwe=ty',
 //   'http://www.example.com/catalog.asp?itemid=232&template=fresh&crcat=ppc&crsource=google&crkw=buy-a-lot',
 // ]
-// console.log(getURL(dataSet));
+// console.log(greedyQuery(dataSet));
 // console.log(greedyQuery($getURL));
-// console.log(notSoGreedy($getURL));
+
