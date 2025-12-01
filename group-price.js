@@ -1,17 +1,20 @@
 function groupPrice(str) {
-    let result = [str.match(/[A-Z$]+\d+.\d+/g)+'',str.match(/\d+(?=\.)/)[0],str.match(/(?<=\.)\d+/g)+'']
-    for (let index in result) {
-        if (result[index] == 'null') {
-            return []
-        }
+    str = str.match(/(USD|\$)\d+\.\d+/g)
+    if (!str) return []
+    
+    let result = []
+    for (let s of str) {        
+        result.push([''+s.match(/(.+)/g),''+s.match(/(\d+(?=.\d+))/g),''+s.match(/(?<=\d+.)(\d+)/g)])
     }
-    return [result]
+    return result 
 }
 
-console.log(groupPrice('USD12.31'));
-console.log(groupPrice('The price of the cereals is $4.00.'));
-console.log(groupPrice('this, 0.32, is not a match'));
-console.log(groupPrice('The price of the cereals is $4.00.'));
+// console.log(groupPrice('USD12.31'));
+// console.log(groupPrice('The price of the cereals is $4.00.'));
+// console.log(groupPrice('this, 0.32, is not a match'));
+// console.log(groupPrice('The price of the cereals is $4.00.'));
+// console.log(groupPrice('product one its USD9.98 and the second one its $10.20'))
+
 
 
 
