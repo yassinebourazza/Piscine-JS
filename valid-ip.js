@@ -3,7 +3,7 @@ function findIP(ip) {
     let iplist = ip.match(/(([0-9]+)\.?){4}:\d+/g)
     
    for (let ipAdress_Port of iplist) {
-    saveIp = ipAdress_Port
+    let saveIp = ipAdress_Port
     ipAdress_Port = ipAdress_Port.split(':')
     ipAdress_Port = [...ipAdress_Port[0].split('.'),ipAdress_Port[1]]
     for (let index = 0 ; index < ipAdress_Port.length-1;index++) {
