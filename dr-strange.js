@@ -23,3 +23,10 @@ function addWeek(date) {
     
     return newSytem[day%14]
 }
+
+function timeTravel(obj) {
+    obj.date.setHours(obj.hour)
+    obj.date.setMinutes(obj.minute)
+    obj.date.setSeconds(obj.second)
+    return obj.date
+}
