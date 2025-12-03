@@ -9,6 +9,10 @@ function isValid(date) {
     return false
 }
 function isAfter(date1,date2) {
+    if (typeof date1 == 'number' && typeof date2 == 'number' && !Number.isNaN(date1)  && !Number.isNaN(date2)) {
+        // is Date.now()
+        return true
+    }
     if (date1 instanceof Date && date2 instanceof Date && date1.getTime() > date2.getTime()) {
         return true
     }
