@@ -1,11 +1,12 @@
 function isValid(date) {
+    date = new Date(date)
     if (date.toString() == 'Invalid Date') {
         return false
     }
     return true
 }
 function isAfter(date1,date2) {
-     if (date1.toString() == 'Invalid Date' && date2.toString() == 'Invalid Date') {
+     if (!isValid) {
         return false
     }
     if (date1 > date2) {
@@ -13,7 +14,7 @@ function isAfter(date1,date2) {
     }
 }
 function isBefore(date1,date2) {
-     if (date1.toString() == 'Invalid Date' && date2.toString() == 'Invalid Date') {
+      if (!isValid) {
         return false
     }
     if (date1 < date2) {
@@ -23,7 +24,7 @@ function isBefore(date1,date2) {
 }
 const isFuture = (date) => {
     const now = new Date()
-    if (date.toString() == 'Invalid Date') {
+      if (!isValid) {
         return false
     }
     if (date > now) {
@@ -33,10 +34,11 @@ const isFuture = (date) => {
 }
 function isPast(date) {
       const now = new Date()
-    if (date.toString() == 'Invalid Date') {
+     if (!isValid) {
         return false
     }
     if (date < now) {
         return true
     }
 }
+console.log(isValid(''));
