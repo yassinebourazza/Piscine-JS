@@ -1,4 +1,7 @@
 function isValid(date) {
+    if (typeof date === 'string') {
+        return false
+    }
     date = new Date(date)
     if (date.toString() == 'Invalid Date') {
         return false
@@ -41,4 +44,4 @@ function isPast(date) {
         return true
     }
 }
-console.log(isValid(''));
+console.log(isValid('2000-01-01'));
