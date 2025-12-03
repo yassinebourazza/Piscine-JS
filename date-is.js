@@ -1,56 +1,42 @@
 function isValid(date) {
-    if (typeof date == 'number' && !Number.isNaN(date)) {
-        // is Date.now()
-        return true
+    if (date.toString() == 'Invalid Date') {
+        return false
     }
-    if (date instanceof Date && !Number.isNaN(date.getDate())) {
-        return true
-    }
-    return false
+    return true
 }
 function isAfter(date1,date2) {
-    if (typeof date1 == 'number' && !Number.isNaN(date1) && date1 > date2) {        
-        // is Date.now()
+     if (date1.toString() == 'Invalid Date' && date2.toString() == 'Invalid Date') {
+        return false
+    }
+    if (date1 > date2) {
         return true
     }
-    if (date1 instanceof Date && date2 instanceof Date && date1.getTime() > date2.getTime()) {
-        return true
-    }
-    
-    return false
 }
 function isBefore(date1,date2) {
-     if (typeof date1 == 'number' && !Number.isNaN(date1) && date1 < date2) {        
-        // is Date.now()
+     if (date1.toString() == 'Invalid Date' && date2.toString() == 'Invalid Date') {
+        return false
+    }
+    if (date1 < date2) {
         return true
     }
-    if (date1 instanceof Date && date2 instanceof Date && date1.getTime() < date2.getTime()) {
-        return true
-    }
-    return false
+  
 }
 const isFuture = (date) => {
     const now = new Date()
-    
-    if (typeof date == 'number' && !Number.isNaN(date) && date > 0) {        
-        // is Date.now()
+    if (date.toString() == 'Invalid Date') {
+        return false
+    }
+    if (date > now) {
         return true
     }
-    if (date instanceof Date && date.getTime() > now.getTime()) {
-        return true
-    }
-    return false
+   
 }
 function isPast(date) {
-    const now = new Date()
-    
-    if (typeof date == 'number' && !Number.isNaN(date) && date < 0) {        
-        // is Date.now()
+      const now = new Date()
+    if (date.toString() == 'Invalid Date') {
+        return false
+    }
+    if (date < now) {
         return true
     }
-    if (date instanceof Date && date.getTime() < now.getTime()) {
-        return true
-    }
-    return false
 }
-
