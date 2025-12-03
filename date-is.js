@@ -1,5 +1,5 @@
 function isValid(date) {
-    if (typeof date == 'number') {
+    if (typeof date == 'number' && !Number.isNaN(date)) {
         // is Date.now()
         return true
     }
@@ -20,3 +20,5 @@ const isPast = (date) => isAfter(new Date(), date)
 
 console.log(isValid(new Date()));
 console.log(isValid(Date.now()));
+console.log(isValid(''));
+console.log(isValid(123));
