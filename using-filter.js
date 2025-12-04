@@ -24,13 +24,11 @@ function filter5Vowels(arr) {
 function filter1DistinctVowel(arr) {
     return arr.filter((str)=>{
         let distinct
-        for (let rune of str) {
-            console.log(rune + '-' + distinct);
-            
-            if (!distinct && 'aeuioAEUIO'.includes(rune)) {
+        for (let rune of str) {            
+            if (!distinct && rune.test(/(a|e|u|i|o)/i)) {
                 distinct = rune
             }
-            if (distinct &&'aeuioAEUIO'.includes(rune) && rune != distinct) {
+            if (distinct && rune.test(/(a|e|u|i|o)/i) && rune != distinct) {
                 return false
             }
         }
@@ -42,15 +40,15 @@ function multiFilter(arr) {
     return arr.filter((obj) => {
         
         if (obj.capital.length < 8) return false
-        if ('aeuioAEUIO'.includes(obj.name[0])) return false
+        if (obj.name[0].test(/(a|e|u|i|o)/i)) return false
         let flag = false
         for (let rune of obj.tag) {
-            if ('aeuioAEUIO'.includes(rune)) {
+            if (rune.test(/(a|e|u|i|o)/i)) {
                 flag = true
                 break
             }
         }
-        if (!flag) return false
+        if (flag) return false
         if (obj.region.includes("South")) return false
         return true
     })
@@ -62,4 +60,12 @@ console.log(multiFilter([{
     tag: 'aba',
     region: 'north'
 }]));
+console.log(filter1DistinctVowel(['Alabama',
+   'Alaska',
+   'Arkansas',
+    'Kansas',
+    'Maryland',
+    'Mississippi',
+    'New Jersey',
+    'Tennessee']));
 
