@@ -35,8 +35,8 @@ function trimTemp(arr) {
 
 function tempForecasts(arr) {
     return arr.map((obj)=>{
-        let temp = Math.round((parseInt(obj.temperature)-32) * (5/9))
-        return temp + "°Celsius in " + obj.city+ ', ' + obj.state
+        let temp = Math.floor((parseInt(obj.temperature)-32) * (5/9))
+        return temp + "°Celsius in " + obj.city+ ', ' + upperCasingStates([obj.state]) + ''
     })
 }
 const temps = ['86°F', '100°F', '41°F', '55°F', '10°F', '70°F', '-2°F']
@@ -62,7 +62,7 @@ const temps = ['86°F', '100°F', '41°F', '55°F', '10°F', '70°F', '-2°F']
 //     region: 'West',
 //   },
 // ]));
-console.log(trimTemp([
-  { city: 'Los Angeles', temperature: '  101 °F   ' },
-  { city: 'San Francisco', temperature: ' 84 ° F   ' },
-]));
+// console.log(trimTemp([
+//   { city: 'Los Angeles', temperature: '  101 °F   ' },
+//   { city: 'San Francisco', temperature: ' 84 ° F   ' },
+// ]));
