@@ -27,10 +27,10 @@ function filter1DistinctVowel(arr) {
         for (let rune of str) {
             console.log(rune + '-' + distinct);
             
-            if (!distinct && 'aeuio'.includes(rune)) {
+            if (!distinct && 'aeuioAEUIO'.includes(rune)) {
                 distinct = rune
             }
-            if (distinct &&'aeuio'.includes(rune) && rune != distinct) {
+            if (distinct &&'aeuioAEUIO'.includes(rune) && rune != distinct) {
                 return false
             }
         }
@@ -42,10 +42,10 @@ function multiFilter(arr) {
     return arr.filter((obj) => {
         
         if (obj.capital.length < 8) return false
-        if ('aeuio'.includes(obj.name[0])) return false
+        if ('aeuioAEUIO'.includes(obj.name[0])) return false
         let flag = false
         for (let rune of obj.tag) {
-            if ('aeuio'.includes(rune)) {
+            if ('aeuioAEUIO'.includes(rune)) {
                 flag = true
                 break
             }
