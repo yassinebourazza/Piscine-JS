@@ -1,12 +1,16 @@
 function firstDayWeek(weeks,year) {    
-    let date = new Date(Date.UTC(year,0,1))
-    if (weeks > 1) {
-        date.setDate(((weeks-1)*7)-date.getDate())
-    }
-    day = date.getDate() + ''
-    mouth = date.getMonth() + ''
-    year = date.getFullYear() + ''
+    let date = new Date(year,0,1)
+    dayOfWeek = date.getDay()
+    dd = date.getDate() + ''
+    mm = date.getMonth() + 1 + ''
+    yyyy = date.getFullYear() + ''  
 
-    return day.padStart(2,'0') + '-' + mouth.padStart(2,'0') + '-' + year.padStart(4, '0')
+    if (date.getFullYear() < year) {
+    dd = '01'
+    mm = '01'
+    yyyy = year+ ''      
+    return dd.padStart(2,'0') + '-' + mm.padStart(2,'0') + '-' + yyyy.padStart(4, '0')
+    }
+   
+    return dd.padStart(2,'0') + '-' + mm.padStart(2,'0') + '-' + yyyy.padStart(4, '0')
 }
-console.log(firstDayWeek(1, 1000))
