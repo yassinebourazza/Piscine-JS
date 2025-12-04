@@ -3,7 +3,21 @@ function citiesOnly(arr) {
 }
 
 function upperCasingStates(arr) {
-    return arr.map((str)=> str.slice(0,1).toUpperCase() + str.slice(1))
+    return arr.map((str)=> {
+        let result = ''
+        for(let i = 0; i< str.length;i++) {
+            console.log(str.length);
+            console.log(i);
+            if (i==0 && str[i] != ' ') {
+                result += str[i].toUpperCase()
+            } else if (str[i] != ' ' && str[i-1] == ' ') {
+                result += str[i].toUpperCase()
+            } else {
+                result += str[i]
+            }
+        }
+        return result
+    })
 }
 
 function fahrenheitToCelsius(arr) {
@@ -22,6 +36,17 @@ function tempForecasts(arr) {
         return temp + "°Celsius in " + obj.city+ ', ' + obj.state
     })
 }
+// console.log(upperCasingStates( [
+//     'Alabama',
+//     'New Jersey',
+//     'Alaska',
+//     'New York',
+//     'California',
+//     'New hampshire',
+//     'Ohio',
+//     'texas',
+//     'west virginia',
+//   ]));
 
 // console.log(tempForecasts([
 //   {
