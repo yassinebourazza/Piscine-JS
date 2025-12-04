@@ -40,7 +40,8 @@ function multiFilter(arr) {
     return arr.filter((obj) => {
         
         if (obj.capital.length < 8) return false
-        if (obj.name[0].test(/(a|e|u|i|o)/i)) return false
+        let name = obj.name()
+        if (name.test(/(a|e|u|i|o)/i)) return false
         let flag = false
         for (let rune of obj.tag) {
             if (rune.test(/(a|e|u|i|o)/i)) {
