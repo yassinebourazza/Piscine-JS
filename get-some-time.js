@@ -1,6 +1,6 @@
 function firstDayWeek(weeks,year) {    
     let date = new Date(year,0,1)
-    dayOfWeek = date.getDay()
+    let dayOfWeek = date.getDay()
     date.setDate(date.getDate()-dayOfWeek+1 + ((weeks-1)*7))
     
     dd = date.getDate() + ''
