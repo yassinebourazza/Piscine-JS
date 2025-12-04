@@ -10,4 +10,3 @@ function dayOfTheYear(date) {
 
     return(date-theFisrtDay)/1000/60/60/24 + 1
 }
-console.log(dayOfTheYear(new Date('00001-01-01'))); 
