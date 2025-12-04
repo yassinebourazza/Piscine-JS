@@ -3,7 +3,7 @@ function filterShortStateName(arr) {
 }
 
 function filterStartVowel(arr) {
-    return arr.filter((str)=> 'aeuio'.includes(str[0]))
+    return arr.filter((str)=> 'aeuioAEUIO'.includes(str[0]))
 }
 
 function filter5Vowels(arr) {
@@ -56,10 +56,10 @@ function multiFilter(arr) {
     })
 }
 
-// console.log(multiFilter([{
-//     capital: '123456789',
-//     name: 'nas',
-//     tag: 'aba',
-//     region: 'north'
-// }]));
+console.log(multiFilter([{
+    capital: '123456789',
+    name: 'Anas',
+    tag: 'aba',
+    region: 'north'
+}]));
 
