@@ -6,7 +6,7 @@ function dayOfTheYear(date) {
     year = year.toString().padStart(4,'0')
     
     let format = year + '-01-01' 
-    theFisrtDay = new Date(format)    
+    let theFisrtDay = new Date(format)    
 
     return(date-theFisrtDay)/1000/60/60/24 + 1
 }
