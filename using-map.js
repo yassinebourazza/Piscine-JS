@@ -6,8 +6,6 @@ function upperCasingStates(arr) {
     return arr.map((str)=> {
         let result = ''
         for(let i = 0; i< str.length;i++) {
-            console.log(str.length);
-            console.log(i);
             if (i==0 && str[i] != ' ') {
                 result += str[i].toUpperCase()
             } else if (str[i] != ' ' && str[i-1] == ' ') {
@@ -36,6 +34,8 @@ function tempForecasts(arr) {
         return temp + "°Celsius in " + obj.city+ ', ' + obj.state
     })
 }
+console.log(ctx.temps);
+
 // console.log(upperCasingStates( [
 //     'Alabama',
 //     'New Jersey',
