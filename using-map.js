@@ -23,7 +23,12 @@ function fahrenheitToCelsius(arr) {
 }
 function trimTemp(arr) {
     return arr.map((obj)=> {
-    obj.temperature = obj.temperature.trim()
+    let trim = obj.temperature.trim().split(' ')
+    let result = ''
+    for (let t of trim) {
+        result += t
+    }
+    obj.temperature = result
     return obj
 })
 }
@@ -57,3 +62,7 @@ const temps = ['86°F', '100°F', '41°F', '55°F', '10°F', '70°F', '-2°F']
 //     region: 'West',
 //   },
 // ]));
+console.log(trimTemp([
+  { city: 'Los Angeles', temperature: '  101 °F   ' },
+  { city: 'San Francisco', temperature: ' 84 ° F   ' },
+]));
