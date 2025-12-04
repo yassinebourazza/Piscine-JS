@@ -1,10 +1,12 @@
 function firstDayWeek(weeks,year) {    
     let date = new Date(year,0,1)
     dayOfWeek = date.getDay()
+    date.setDate(date.getDate()-dayOfWeek+1 + ((weeks-1)*7))
+    
     dd = date.getDate() + ''
     mm = date.getMonth() + 1 + ''
     yyyy = date.getFullYear() + ''  
-
+    
     if (date.getFullYear() < year) {
     dd = '01'
     mm = '01'
