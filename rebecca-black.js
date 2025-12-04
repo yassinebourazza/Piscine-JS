@@ -12,8 +12,11 @@ function  isLeapYear(date) {
 }
 
 function isLastDayOfMonth(date) {
-    let day = date.getDate() +1
-    return (day == 0)
+    let day
+    date.setDate(date.getDate()+1)
+    day = date.getDate()
+    
+    return (day == 1)
 }
 
-console.log(isLeapYear(new Date('1804-02-01')));
+
