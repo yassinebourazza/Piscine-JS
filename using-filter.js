@@ -40,11 +40,11 @@ function multiFilter(arr) {
     return arr.filter((obj) => {
         
         if (obj.capital.length < 8) return false
-        let name = obj.name[0]
-        if (name.test(/(a|e|u|i|o)/i)) return false
+        
+        if ('aeuioAEUIO'.includes(obj.name[0])) return false
         let flag = false
         for (let rune of obj.tag) {
-            if (rune.test(/(a|e|u|i|o)/i)) {
+            if ('aeuioAEUIO'.includes(rune)) {
                 flag = true
                 break
             }
