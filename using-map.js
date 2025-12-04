@@ -19,7 +19,7 @@ function upperCasingStates(arr) {
 }
 
 function fahrenheitToCelsius(arr) {
-    return arr.map((fah)=> Math.round(((parseInt(fah))-32)* (5/9)) + '°C')
+    return arr.map((fah)=> Math.floor(((parseInt(fah))-32)* (5/9)) + '°C')
 }
 function trimTemp(arr) {
     return arr.map((obj)=> {
@@ -34,7 +34,8 @@ function tempForecasts(arr) {
         return temp + "°Celsius in " + obj.city+ ', ' + obj.state
     })
 }
-console.log(ctx.temps);
+const temps = ['86°F', '100°F', '41°F', '55°F', '10°F', '70°F', '-2°F']
+
 
 // console.log(upperCasingStates( [
 //     'Alabama',
