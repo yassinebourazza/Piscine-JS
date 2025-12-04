@@ -23,14 +23,17 @@ function filter5Vowels(arr) {
 
 function filter1DistinctVowel(arr) {
     return arr.filter((str)=>{
-        let distinct        
+        let distinct
+        // console.log(str);
+        
         for (let rune of str) {            
-            if ('aeuioAEUIO'.includes(rune)) {
-                distinct = rune
-            }
             
-            if (distinct && 'aeuioAEUIO'.includes(rune)) {               
+            if (distinct && 'aeuioAEUIO'.includes(rune)) {
+                // console.log(str,'--', rune,'---', distinct);
+                
                 if (rune != distinct.toUpperCase() && rune != distinct.toLowerCase()) return false
+            } else if ('aeuioAEUIO'.includes(rune)) {
+                distinct = rune
             }
         }
         return true
@@ -56,12 +59,12 @@ function multiFilter(arr) {
     })
 }
 
-console.log(filter1DistinctVowel(['Alabama',
-   'Alaska',
-   'Arkansas',
-    'Kansas',
-    'Maryland',
-    'Mississippi',
-    'New Jersey',
-    'Tennessee']));
+// console.log(filter1DistinctVowel(['Alaubama',
+//    'Alaska',
+//    'Arkansas',
+//     'Kansas',
+//     'Maryland',
+//     'Mississippi',
+//     'New Jersey',
+//     'Tennessee']));
 
