@@ -7,11 +7,11 @@ function isWeekend(date) {
 }
 
 function  leapYear(date) {
-    year = date.getFullYear()
+    let year = date.getFullYear()
     return (year%4 == 0 &&year%100 != 0&&year%400 == 0 )
 }
 
 function isLastDayOfMonth(date) {
-    day = date.getDate() +1
+    let day = date.getDate() +1
     return (day == 0)
 }
