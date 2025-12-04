@@ -25,10 +25,10 @@ function filter1DistinctVowel(arr) {
     return arr.filter((str)=>{
         let distinct
         for (let rune of str) {            
-            if (!distinct && rune.test(/(a|e|u|i|o)/i)) {
+            if (!'aeuioAEUIO'.includes(rune)) {
                 distinct = rune
             }
-            if (distinct && rune.test(/(a|e|u|i|o)/i) && rune != distinct) {
+            if (distinct && 'aeuioAEUIO'.includes(rune) && rune != distinct) {
                 return false
             }
         }
