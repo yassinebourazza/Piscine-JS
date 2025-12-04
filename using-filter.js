@@ -44,7 +44,6 @@ function multiFilter(arr) {
     return arr.filter((obj) => {
         
         if (obj.capital.length < 8) return false
-        
         if ('aeuioAEUIO'.includes(obj.name[0])) return false
         let flag = false
         for (let rune of obj.tag) {
@@ -53,8 +52,8 @@ function multiFilter(arr) {
                 break
             }
         }
-        if (flag) return false
-        if (obj.region.includes("South")) return false
+        if (!flag) return false
+         if (obj.region.includes("South")) return false
         return true
     })
 }
@@ -67,4 +66,25 @@ function multiFilter(arr) {
 //     'Mississippi',
 //     'New Jersey',
 //     'Tennessee']));
-
+console.log(multiFilter([
+    { tag: 'CA', name: 'California', capital: 'Sacramento', region: 'West' },
+    { tag: 'HI', name: 'Hawaii', capital: 'Honolulu', region: 'West' },
+    {
+      tag: 'MO',
+      name: 'Missouri',
+      capital: 'Jefferson City',
+      region: 'Midwest',
+    },
+    {
+      tag: 'PA',
+      name: 'Pennsylvania',
+      capital: 'Harrisburg',
+      region: 'Northeast',
+    },
+    {
+      tag: 'RI',
+      name: 'Rhode Island',
+      capital: 'Providence',
+      region: 'Northeast',
+    },
+  ]));
