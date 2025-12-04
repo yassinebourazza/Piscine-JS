@@ -8,10 +8,12 @@ function isWeekend(date) {
 
 function  isLeapYear(date) {
     let year = date.getFullYear()
-    return (year%4 == 0 &&year%100 != 0&&year%400 == 0 )
+    return ((year %400 == 0) || year%4 == 0 &&year%100 != 0)
 }
 
 function isLastDayOfMonth(date) {
     let day = date.getDate() +1
     return (day == 0)
 }
+
+console.log(isLeapYear(new Date('1804-02-01')));
