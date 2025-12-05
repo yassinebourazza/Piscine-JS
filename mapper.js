@@ -11,11 +11,8 @@ function flatMap(arr,func) {
     const result = []
     for (let i = 0 ; i < arr.length;i++) {
         let res = func(arr[i],i,arr)
-        
-        if (Array.isArray(res)) {
-        result.push(...res)
-        } else {
-            result.push(func(res,i,arr))
+        for (let r of res) {
+            result.push(r)
         }
     }
     return result
