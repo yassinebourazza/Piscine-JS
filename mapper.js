@@ -8,7 +8,7 @@ function map(arr,func) {
 
 
 function flatMap(arr,func) {
-    const result = []
+    let result = []
     for (let i = 0 ; i < arr.length;i++) {
         let res = func(arr[i],i,arr)
         for (let r of res) {
