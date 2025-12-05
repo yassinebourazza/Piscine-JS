@@ -34,7 +34,7 @@ function reduce(arr,func,acc=0) {
 function reduceRight(arr,func,acc=0) {
     let start = 0
     if (acc==0) {
-        acc= arr[0]
+        acc= arr[arr.length-1]
         start++
     }
     
@@ -42,11 +42,7 @@ function reduceRight(arr,func,acc=0) {
         return "error"
     }
     
-    if (typeof arr == 'string') {
-        return arr
-    }
-    
-    for (let i= arr.length-1 ;i>=start;i--) {
+    for (let i= arr.length-1-start ;i>=0;i--) {
         acc = func(acc,arr[i],i,arr)
     }
     return acc
