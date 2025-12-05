@@ -6,7 +6,16 @@ function fold(arr,func,acc) {
 
     return acc
 }
-// const adder = (x,y) => x + y
+
+function foldRight(arr,func,acc) {
+    
+    for (let i= arr.length-1 ;i>= 0;i--) {
+        acc = func(acc,arr[i],i,arr)
+    }
+
+    return acc
+}
+//  const adder = (x,y) => x - y
 
 
-// console.log(fold([1,2,3,4], adder,5));
+//  console.log(fold([1,2,3,4], adder,5));
