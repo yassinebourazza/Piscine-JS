@@ -31,7 +31,22 @@ function reduce(arr,func,acc=0) {
     }
     return acc
 }
+function reduceRight(arr,func,acc=0) {
+    let start = 0
+    if (acc==0) {
+        acc= arr[0]
+        start++
+    }
+    
+    if (arr.length < 1) {
+        return "error"
+    }
+    for (let i= arr.length-1 ;i>=start;i--) {
+        acc = func(acc,arr[i],i,arr)
+    }
+    return acc
+}
 //   const adder = (x,y) => x + y
 
 
-//   console.log(reduce([1,2,3,4], adder));
+//   console.log(reduceRight([1,2,3,4], adder));
