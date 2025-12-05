@@ -41,12 +41,17 @@ function reduceRight(arr,func,acc=0) {
     if (arr.length < 1) {
         return "error"
     }
+    
+    if (typeof arr == 'string') {
+        return arr
+    }
+    
     for (let i= arr.length-1 ;i>=start;i--) {
         acc = func(acc,arr[i],i,arr)
     }
     return acc
 }
-//   const adder = (x,y) => x + y
+//    const adder = (x,y) => x + y
 
 
-//   console.log(reduceRight([1,2,3,4], adder));
+//    console.log(reduceRight('examplesimple a is This ', adder));
