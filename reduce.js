@@ -51,7 +51,7 @@ function reduceRight(arr,func,acc=0) {
     }
     return acc
 }
-//    const adder = (x,y) => x + y
+   const adder = (x,y) => x + y
 
 
-//    console.log(reduceRight('examplesimple a is This ', adder));
+   console.log(reduceRight('examplesimple a is This ', adder));
