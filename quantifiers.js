@@ -13,6 +13,6 @@ function some(arr,func) {
 }
 
 function none(arr,func) {
-    return some(arr,func)
+    return !some(arr,func)
 }
 
