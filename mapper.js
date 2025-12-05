@@ -10,11 +10,15 @@ function map(arr,func) {
 function flatMap(arr,func) {
     const result = []
     for (let i = 0 ; i < arr.length;i++) {
-        if (Array.isArray(arr[i])) {
-        result.push(...flatMap(arr[i],func))
+        res = func(arr[i],i,arr)
+        
+        if (Array.isArray(res)) {
+        result.push(...res)
+        } else {
+            result.push(func(res,i,arr))
         }
-        result.push(func(arr[i],i,arr))
     }
     return result
 }
 
+console.log(flatMap([1, 2, 3], (n) => [n, n]));
