@@ -9,4 +9,4 @@ function fold(arr,func,acc) {
 // const adder = (x,y) => x + y
 
 
-console.log(fold([1,2,3,4], adder,5));
+// console.log(fold([1,2,3,4], adder,5));
