@@ -15,7 +15,23 @@ function foldRight(arr,func,acc) {
 
     return acc
 }
-//  const adder = (x,y) => x - y
+
+function reduce(arr,func,acc=0) {
+    let start = 0
+    if (acc==0) {
+        acc= arr[0]
+        start++
+    }
+    
+    if (arr.length < 1) {
+        return "error"
+    }
+    for (let i= start ;i< arr.length;i++) {
+        acc = func(acc,arr[i],i,arr)
+    }
+    return acc
+}
+//   const adder = (x,y) => x + y
 
 
-//  console.log(fold([1,2,3,4], adder,5));
+//   console.log(reduce([1,2,3,4], adder));
