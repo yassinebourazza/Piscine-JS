@@ -9,7 +9,7 @@ export function build(num) {
             div.id = 'brick-' + (++count)
             div.textContent = count
             if ((count)%3==2) {
-                div.setAttribute('foundation', true)
+                div.setAttribute('data-foundation', 'true')
                 
             }
             document.body.append(div)
