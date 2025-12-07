@@ -8,11 +8,16 @@ export function generateClasses() {
     document.head.append(style)
 }
 export function generateColdShades() {
+    let coldColors = ['aqua','blue','turquoise','green','cyan','navy','purple']
     for (let color of colors) {
-        let div = document.createElement('div')
-        div.className = color
-        div.textContent = color
-        document.body.append(div)
+        for (let cold of coldColors) {
+            if (color.includes(cold)) {
+                let div = document.createElement('div')
+                div.className = color
+                div.textContent = color
+                document.body.append(div)
+            }
+        }
     }
 }
 export function choseShade(textContent) {
