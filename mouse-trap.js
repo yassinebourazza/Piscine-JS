@@ -25,9 +25,9 @@ export function moveCircle() {
        
        if ((parseInt(div.style.top) >= boxPosition.y+1 && parseInt(div.style.top) <= boxPosition.y+boxPosition.height-51) &&
            (parseInt(div.style.left) >= boxPosition.x+1 && parseInt(div.style.left) <= boxPosition.x+boxPosition.width-51) ) {
-           div.style.background = 'purple'
+           div.style.background = 'var(--purple)'
         }
-        if (div.style.background == 'purple') {
+        if (div.style.background == 'var(--purple)') {
             if (parseInt(div.style.top) < boxPosition.y+1) {
                 div.style.top = boxPosition.y+1 + 'px'
             }
