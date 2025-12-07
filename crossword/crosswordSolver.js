@@ -2,6 +2,13 @@ const paths = []
 const solutions = []
 let puzzle2D = []
 
+const emptyPuzzle = `2000
+0...
+0...
+0...`
+const words = ['casa',  'ciao']
+crosswordSolver(emptyPuzzle, words)
+
 // this is the main function 
 function crosswordSolver(puzzle, words) {
 
@@ -102,7 +109,7 @@ function getCoordinates(vertical, horizontal, puzzle) {
       }
     }
   }
-
+  
   if (paths.length !== words.length) {
     return false
   }
@@ -111,16 +118,14 @@ function getCoordinates(vertical, horizontal, puzzle) {
 
 // function solve : this function use the backtraking algorithme to check the puzzle
 function solve(currentPath, wordArray, words) {
-
-  if (solutions.length > 1) return
-
+  
   if (currentPath === paths.length) {
     solutions.push(puzzle2D.map(row => row.join('')).join('\n'));
     return
   }
-
+  
   const coordinates = paths[currentPath]
-
+  
   for (let i = 0; i < words.length; i++) {
     if (wordArray[i]) continue
     const word = words[i]
@@ -136,17 +141,17 @@ function solve(currentPath, wordArray, words) {
         row = coordinates.y + k
         col = coordinates.x
       }
-
+      
       const currentCell = puzzle2D[row][col]      
-
+      
       if (/[^012]/.test(currentCell) && currentCell !== word[k]) {
         valid = false
         break
       }
-
-
+      
+      
     }
-
+    
     if (valid) {
       const backup = []
       for (let k = 0; k < word.length; k++) {
@@ -164,13 +169,16 @@ function solve(currentPath, wordArray, words) {
       }
       wordArray[i] = true
       solve(currentPath + 1, wordArray, words)
+      if (solutions.length > 1)  {
+        return
+      }
+      wordArray[i] = false
       // backup all placed flag [0,1,2]
       for (const path of backup) {
         puzzle2D[path.y][path.x] = path.val
       }
 
     }
-    wordArray[i] = false
   }
 }
 
