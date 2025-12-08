@@ -1,4 +1,4 @@
-// const nutrients = { carbohydrates: 12, protein: 20, fat: 5 }
+const nutrients = { carbohydrates: 12, protein: 20, fat: 5 }
 
 function filterKeys(obj,regex) {
     let newObj = {}
@@ -23,8 +23,9 @@ function reduceKeys(obj,concat,init='') {
     for (let key of keys) {
         str = concat(str,key)
     }
-    return str.slice(2)
+    return str
 }
+// console.log(reduceKeys(nutrients, (acc, cr) => `${acc}${cr}:`, ':'));
 
 // console.log(filterKeys(nutrients, (key) => /protein/.test(key)))
 // // output: { protein: 20 }
