@@ -4,7 +4,7 @@ function pick(obj,arr) {
         arr = [arr]
     }
     for (let key of arr) {
-        if (obj[key]) {
+        if (obj[key] != undefined) {
             newObj[key] = obj[key]
         }
     }
@@ -25,6 +25,6 @@ function omit(obj,arr) {
 }
 
 // console.log(pick({a:2,b:3,c:4}, 'a'));
-// console.log(pick({a:2,b:3,c:4}, ["a","b"]));
+// console.log(pick({a:false,b:3,c:4}, ["a","b"]));
 // console.log(omit({a:2,b:3,c:4}, 'a'));
 // console.log(omit({a:2,b:3,c:4}, ["a","b"]));
