@@ -16,8 +16,8 @@ function mapValues(obj, func) {
     return newObj
 }
 
-function reduceValues(obj, func) {
-     let count = 0
+function reduceValues(obj, func,init=0) {
+     let count = init
     for (let key in obj) {
        count = func(count,obj[key]) 
     }
@@ -25,6 +25,7 @@ function reduceValues(obj, func) {
 }
 
 
+// console.log(reduceValues({ a: 1, b: 2, c: 3 }, (acc, cr) => acc + cr, 3));
 
 // console.log(filterValues(nutrients, (nutrient) => nutrient <= 12))
 // // output: { carbohydrates: 12, fat: 5 }
