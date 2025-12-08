@@ -1,4 +1,4 @@
-// const nutrients = { carbohydrates: 12, protein: 20, fat: 5 }
+const nutrients = { carbohydrates: 12, protein: 20, fat: 5 }
 
 function filterKeys(obj,regex) {
     let newObj = {}
@@ -19,20 +19,24 @@ function mapKeys(obj,toStr) {
 
 function reduceKeys(obj,concat,init='') {
     let str = init
+    let start = 0
     let keys = Object.keys(obj)
-    if (str == '') str = keys[0]
-    for (let key=0; key < keys.length;key++) {
+    if (str == '') {
+        str = keys[0]
+        start++
+    }
+    for (let key=start; key < keys.length;key++) {
         str = concat(str,keys[key])
     }
     return str
 }
 //  console.log(reduceKeys(nutrients, (acc, cr) => `${acc}${cr}:`, ':'));
 
-// // console.log(filterKeys(nutrients, (key) => /protein/.test(key)))
-// // // output: { protein: 20 }
+// // // console.log(filterKeys(nutrients, (key) => /protein/.test(key)))
+// // // // output: { protein: 20 }
 
-// // console.log(mapKeys(nutrients, (k) => `-${k}`))
-// // // output: { -carbohydrates: 12, -protein: 20, -fat: 5 }
+// // // console.log(mapKeys(nutrients, (k) => `-${k}`))
+// // // // output: { -carbohydrates: 12, -protein: 20, -fat: 5 }
 
 // console.log(reduceKeys(nutrients, (acc, cr) =>acc.concat(', ', cr)))
 // // output: carbohydrates, protein, fat
