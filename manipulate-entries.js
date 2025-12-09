@@ -23,7 +23,8 @@ function filterEntries(obj,func) {
 function mapEntries(obj,func) {
     let res = {}
     for (let key in obj) {
-        res[key] = func([key,obj[key]])
+        const [newKey, newValue] = func([key,obj[key]])
+        res[newKey] = newValue
     }
     return res
 }
