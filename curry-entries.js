@@ -99,7 +99,7 @@ const personnel = {
   calebDume:     { id: 11, pilotingScore: 71, shootingScore: 85, isForceUser: true  },
 }
 
-console.log(reduceScore(personnel, 0));
+// console.log(reduceScore(personnel, 0));
 
 function reduceScore(objects,acc) {
     if (acc ==undefined) acc =0
@@ -111,7 +111,7 @@ function reduceScore(objects,acc) {
     }
     return acc
 }
-console.log(filterForce(personnel));
+// console.log(filterForce(personnel));
 
 
 function filterForce(objects) {
@@ -121,6 +121,20 @@ function filterForce(objects) {
         if (obj[1].isForceUser && obj[1].shootingScore >= 80) {
             res[obj[0]] = obj[1]
         }
+    }
+    return res
+}
+
+console.log(mapAverage(personnel));
+
+
+function mapAverage(objects) {
+    let res= {}
+    let keys = Object.entries(objects)
+    let average = reduceScore(objects)/ (keys.length*2)    
+     for (let obj of keys) {
+            res[obj[0]] = obj[1]
+            res[obj[0]].averageScore = average
     }
     return res
 }
