@@ -30,7 +30,7 @@ function mapEntries(obj,func) {
 }
 function reduceEntries(obj,func,count=0) {
     let keys = Object.keys(obj)
-    start = 0
+    let start = 0
     if (count===undefined) {
         count=keys[0]
         start = 1
