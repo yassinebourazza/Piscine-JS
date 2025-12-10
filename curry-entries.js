@@ -53,3 +53,21 @@ function mapCurry(func) {
         return res
     }
 }
+
+// console.log(reduceCurry((acc, [k, v]) => (acc += v))({ a: 1, b: 2, c: 3 }, 0))
+// // output == 6
+
+function reduceCurry(func) {
+    return function(obj,acc) {
+        let keys = Object.keys(obj)
+        let start = 0
+        if (acc==undefined)  {
+            acc = keys[0]
+            start = 1
+        }
+        for (let key of keys) {
+            acc = func(acc,[key,obj[key]])
+        }
+        return acc
+    }
+}
