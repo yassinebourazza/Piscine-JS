@@ -32,3 +32,24 @@ function defaultCurry(obj1) {
          return res
     }
 }
+
+// // output
+// const personnel = {
+//   lukeSkywalker_force: { id: 5,  pilotingScore: 98, shootingScore: 56, isForceUser: true  },
+//   sabineWren_force:    { id: 82, pilotingScore: 73, shootingScore: 99, isForceUser: false },
+//   zebOrellios_force:   { id: 22, pilotingScore: 20, shootingScore: 59, isForceUser: false },
+//   ezraBridger_force:   { id: 15, pilotingScore: 43, shootingScore: 67, isForceUser: true  },
+//   calebDume_force:     { id: 11, pilotingScore: 71, shootingScore: 85, isForceUser: true  },
+// }
+// console.log(mapCurry(([k, v]) => [`${k}_force`, v])(personnel))
+
+function mapCurry(func) {
+    return function(obj) {
+        let res = {}
+        for (let [key,value] of Object.entries(obj)) {            
+            const [k,v] = func([key,value])
+            res[k] = v
+        }
+        return res
+    }
+}
