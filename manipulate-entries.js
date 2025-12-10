@@ -50,8 +50,8 @@ function lowCarbs(card) {
 function cartTotal(card) {
     return mapEntries(card, ([key,value]) => {
         let res = {}
-        for (let k in nutritionDB[key]) {            
-            res[k] = +(value/ 100 * nutritionDB[key][k]).toFixed(1)
+        for (let k in nutritionDB[key]) {      
+            res[k] = +(value/ 100 * nutritionDB[key][k]).toFixed(3)
         }
         return res
     })
