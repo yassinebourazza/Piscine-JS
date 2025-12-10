@@ -91,13 +91,13 @@ function filterCurry(func) {
 }
 
 // prettier-ignore
-// const personnel = {
-//   lukeSkywalker: { id: 5,  pilotingScore: 98, shootingScore: 56, isForceUser: true  },
-//   sabineWren:    { id: 82, pilotingScore: 73, shootingScore: 99, isForceUser: false },
-//   zebOrellios:   { id: 22, pilotingScore: 20, shootingScore: 59, isForceUser: false },
-//   ezraBridger:   { id: 15, pilotingScore: 43, shootingScore: 67, isForceUser: true  },
-//   calebDume:     { id: 11, pilotingScore: 71, shootingScore: 85, isForceUser: true  },
-// }
+const personnel = {
+  lukeSkywalker: { id: 5,  pilotingScore: 98, shootingScore: 56, isForceUser: true  },
+  sabineWren:    { id: 82, pilotingScore: 73, shootingScore: 99, isForceUser: false },
+  zebOrellios:   { id: 22, pilotingScore: 20, shootingScore: 59, isForceUser: false },
+  ezraBridger:   { id: 15, pilotingScore: 43, shootingScore: 67, isForceUser: true  },
+  calebDume:     { id: 11, pilotingScore: 71, shootingScore: 85, isForceUser: true  },
+}
 
 // console.log(reduceScore(personnel, 0));
 
@@ -125,15 +125,15 @@ function filterForce(objects) {
     return res
 }
 
+console.log(mapAverage(personnel));
 
 
 function mapAverage(objects) {
     let res= {}
     let keys = Object.entries(objects)
-    let average = reduceScore(objects)/ (keys.length*2)    
      for (let obj of keys) {
             res[obj[0]] = {...obj[1]}
-            res[obj[0]].averageScore = average
+            res[obj[0]].averageScore = (res[obj[0]].shootingScore + res[obj[0]].pilotingScore) /2
     }
     return res
 }
