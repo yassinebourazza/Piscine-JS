@@ -111,3 +111,16 @@ function reduceScore(objects,acc) {
     }
     return acc
 }
+console.log(filterForce(personnel));
+
+
+function filterForce(objects) {
+    let res = {}
+    let keys = Object.entries(objects)
+    for (let obj of keys) {
+        if (obj[1].shootingScore >= 80) {
+            res[obj[0]] = obj[1]
+        }
+    }
+    return res
+}
