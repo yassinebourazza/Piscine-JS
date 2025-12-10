@@ -118,7 +118,7 @@ function filterForce(objects) {
     let res = {}
     let keys = Object.entries(objects)
     for (let obj of keys) {
-        if (obj[1].shootingScore >= 80) {
+        if (obj[1].isForceUser && obj[1].shootingScore >= 80) {
             res[obj[0]] = obj[1]
         }
     }
