@@ -24,11 +24,11 @@ function reduceEntries(obj,func,count) {
     for (let key =start ; key<keys.length;key++) { 
         count = func([keys[key],obj[keys[key]]],count)
     }
-    return +count.toFixed(1)
+    return count
 }
 
 function totalCalories(card) {
-    return reduceEntries(card, ([key,value],acc)=> acc + value/100 * nutritionDB[key].calories)
+    return reduceEntries(card, ([key,value],acc)=> +(acc + value/100 * nutritionDB[key].calories).toFixed(1))
 }
 function lowCarbs(card) {
     return filterEntries(card, ([key,value]) => 50 > (value/100 * nutritionDB[key].carbs))
