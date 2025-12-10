@@ -71,3 +71,21 @@ function reduceCurry(func) {
         return acc
     }
 }
+
+// console.log(filterCurry(([k, v]) => typeof v === 'string' || k === 'arr')({
+//   str: 'string',
+//   nbr: 1,
+//   arr: [1, 2],
+// }))
+// // output { str: 'string', arr: [1, 2] }
+
+function filterCurry(func) {
+    return function(obj) {
+        let GlobalKeyVal = Object.entries(obj)
+        let res = {}
+        for(let keyVal of GlobalKeyVal) {
+            if (func(keyVal)) res[keyVal[0]] = keyVal[1]
+        }
+        return res
+    }
+}
