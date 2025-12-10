@@ -40,7 +40,7 @@ function reduceEntries(obj,func,count) {
 }
 
 function totalCalories(card) {
-    return reduceEntries(card, ([key,value],acc)=> +(acc + value/100 * nutritionDB[key].calories).toFixed(1),0)
+    return reduceEntries(card, (acc,[key,value])=> +(acc + value/100 * nutritionDB[key].calories).toFixed(1),0)
 }
 function lowCarbs(card) {
     return filterEntries(card, ([key,value]) => 50 > (value/100 * nutritionDB[key].carbs))
@@ -54,4 +54,3 @@ function cartTotal(card) {
         return [key,res]
     })
 }
-console.log( reduceEntries( { orange: 500, oil: 20, sugar: 480 }, (acc, [k, v]) => acc + k + v, ''));
