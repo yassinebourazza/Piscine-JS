@@ -9,10 +9,10 @@ function pronoun(str) {
         for (let word=0; word < str.length;word++) {
             if(res[str[word]] == undefined && pron.includes(str[word])) {
                 res[str[word]] = {word:[],count:1}
-                if (!pron.includes(str[word+1])) {
+                if (!pron.includes(str[word+1])&& str[word+1] != undefined) {
                      res[str[word]].word.push(str[word+1])
                 }
-            } else if (res[str[word]] && !pron.includes(str[word+1])) {
+            } else if (res[str[word]] && !pron.includes(str[word+1]) && str[word+1] != undefined) {
                 res[str[word]].word.push(str[word+1])
                 res[str[word]].count++
             } else if (res[str[word]]) {
@@ -28,6 +28,7 @@ function pronoun(str) {
 // console.log(pronoun(`The seal method seals an object, preventing new properties from being
 //  added to it and marking all existing properties as non-configurable. Values of present 
 // properties can still be changed as long as they are writable.`))
+// console.log(pronoun('we will rock you'));
 
 //   i: { word: ['buy', 'to'], count: 2 },
 //   you: { word: ['buy', 'go'], count: 2 },
