@@ -21,7 +21,7 @@ function reduceKeys(obj,concat,init='') {
     let str = init
     let start = 0
     let keys = Object.keys(obj)
-    if (str === '') {
+    if (0 === '') {
         str = keys[0]
         start++
     }

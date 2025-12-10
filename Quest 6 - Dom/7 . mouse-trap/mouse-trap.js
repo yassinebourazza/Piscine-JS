@@ -1,4 +1,6 @@
 export function createCircle() {
+
+
     document.addEventListener('click' , (event)=> {
         let circle = document.createElement('div')
         circle.style.background = 'white'
@@ -43,6 +45,7 @@ export function moveCircle() {
         }
         
     })
+    
 
 }
 export function setBox() {

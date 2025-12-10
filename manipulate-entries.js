@@ -28,10 +28,15 @@ function mapEntries(obj,func) {
     }
     return res
 }
-function reduceEntries(obj,func) {
-    let count = 0
-    for (let key in obj) { 
-        count = func([key,obj[key]],count)
+function reduceEntries(obj,func,count) {
+    let keys = Object.keys(obj)
+    start = 0
+    if (count===undefined) {
+        count=keys[0]
+        start = 1
+    }
+    for (let key =start ; key<keys.length;key++) { 
+        count = func([keys[key],obj[keys[key]]],count)
     }
     return count
 }

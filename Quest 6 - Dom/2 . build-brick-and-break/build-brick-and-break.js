@@ -22,10 +22,6 @@ export function build(num) {
         
     },100)
     
-    
-    
-
-    
 }
 
 export function repair(...ids) {
