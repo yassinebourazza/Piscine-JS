@@ -23,7 +23,7 @@ function pronoun(str) {
 // const ex = 'Using Array Destructuring, you wr you you can iterate through objects easily.'
 // console.log(pronoun(ex));
 // console.log(pronoun('I buy,\ni to,\nYOU buy,\nit have,\nIt buys,\nit is,\nyou go')
-)
+
  
 //   i: { word: ['buy', 'to'], count: 2 },
 //   you: { word: ['buy', 'go'], count: 2 },
