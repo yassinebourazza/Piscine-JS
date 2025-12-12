@@ -1,38 +1,65 @@
 function debounce(func,timer) {
     let deb
     return function(...args) {
-        console.log(deb); //undefined in the first time
         clearTimeout(deb)
         
         deb = setTimeout(() => {
             func(...args)
         }, timer);
-        // console.log(deb);/*Timeout {
-        //                   _idleTimeout: 100,
-        //                   _idlePrev: [TimersList],
-        //                   _idleNext: [TimersList],
-        //                   _idleStart: 15,
-        //                   _onTimeout: [Function (anonymous)],
-        //                   _timerArgs: undefined,
-        //                   _repeat: null,
-        //                   _destroyed: false,
-        //                   [Symbol(refed)]: true,
-        //                   [Symbol(kHasPrimitive)]: false,
-        //                   [Symbol(asyncId)]: 8,
-        //                   [Symbol(triggerId)]: 1*/
-        return deb._idleStart
+        return 
     }   
 }
+// console.log(deb);/*Timeout {
+//                   _idleTimeout: 100,
+//                   _idlePrev: [TimersList],
+//                   _idleNext: [TimersList],
+//                   _idleStart: 15,
+//                   _onTimeout: [Function (anonymous)],
+//                   _timerArgs: undefined,
+//                   _repeat: null,
+//                   _destroyed: false,
+//                   [Symbol(refed)]: true,
+//                   [Symbol(kHasPrimitive)]: false,
+//                   [Symbol(asyncId)]: 8,00
+//                   [Symbol(triggerId)]: 1*/
 
-const f = debounce((x)=> x+1, 100)
-console.log(f(1,2,3));
-console.log(f(1,2,3));
-console.log(f(1,2,3));
+// const lo = debounce((msg) => console.log(msg), 500, true);
 
-// function opDebounce(func, timer) {
-//     return function(...args) {
+// lo("A");
+// lo("B"); 
+// lo("C");
 
+function opDebounce(func, timer, leading = false) {
+    let id
+    let flag = false;
+    return function (...args) {
+        const eventNow = leading && !flag;
+        clearTimeout(id)
+        if (eventNow) {
+            flag = true
+            func(...args)
+        }
+        id = setTimeout(() => {
+            flag = false
+        }, timer)
+    };
+}
+
+// const log = opDebounce((msg) => console.log(msg), 500,true);
+
+// log("A");
+// log("B"); 
+// log("C");
+
+// function makeCounter() {
+//     let count = 0
+//     return function() {
+//         count++
+//         return count
 //     }
 // }
 
-
+// const c = makeCounter()
+// console.log(c()) 
+// console.log(c()) 
+// console.log(c()) 
