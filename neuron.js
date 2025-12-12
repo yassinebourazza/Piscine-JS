@@ -12,8 +12,10 @@ function neuron(arr) {
             result[str[0]] = {}
         } 
         if (result[str[0]][str[1].toLowerCase().replaceAll(' ','_').replaceAll(/[\W]/g,'')]== undefined) {
-            result[str[0]][str[1].toLowerCase().replaceAll(' ','_').replaceAll(/[\W]/g,'')] = {question: str[1] , responses : [str[3]]}
-            continue
+              let keys = Object.keys(result)
+            result[str[0]][str[1].toLowerCase().replaceAll(' ','_').replaceAll(/[\W]/g,'')] = {}
+            result[str[0]][str[1].toLowerCase().replaceAll(' ','_').replaceAll(/[\W]/g,'')][keys[keys.length-1]] = str[1]
+            result[str[0]][str[1].toLowerCase().replaceAll(' ','_').replaceAll(/[\W]/g,'')].responses = []
         }
         result[str[0]][str[1].toLowerCase().replaceAll(' ','_').replaceAll(/[\W]/g,'')].responses.push(str[3])
         
@@ -25,9 +27,7 @@ function neuron(arr) {
     
 }
 
-console.log(neuron(['Orders: shutdown please! - Response: no!']).orders.shutdown_please,
-    { order: 'shutdown please!', responses: ['no!'] }
-  );
+console.log(neuron(['Orders: shutdown please! - Response: no!']).orders.shutdown_please);
 
 
 console.log(neuron([ 'Questions: what is ounces? - Response: Ounce, unit of weight in the avoirdupois system',
