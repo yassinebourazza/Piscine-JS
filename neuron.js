@@ -14,7 +14,7 @@ function neuron(arr) {
         if (result[str[0]][str[1].toLowerCase().replaceAll(' ','_').replaceAll(/[\W]/g,'')]== undefined) {
               let keys = Object.keys(result)
             result[str[0]][str[1].toLowerCase().replaceAll(' ','_').replaceAll(/[\W]/g,'')] = {}
-            result[str[0]][str[1].toLowerCase().replaceAll(' ','_').replaceAll(/[\W]/g,'')][keys[keys.length-1]] = str[1]
+            result[str[0]][str[1].toLowerCase().replaceAll(' ','_').replaceAll(/[\W]/g,'')][keys[keys.length-1].slice(0,-1)] = str[1]
             result[str[0]][str[1].toLowerCase().replaceAll(' ','_').replaceAll(/[\W]/g,'')].responses = []
         }
         result[str[0]][str[1].toLowerCase().replaceAll(' ','_').replaceAll(/[\W]/g,'')].responses.push(str[3])
