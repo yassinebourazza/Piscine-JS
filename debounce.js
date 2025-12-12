@@ -1,12 +1,10 @@
 function debounce(func,timer) {
     let deb
     return function(...args) {
-        clearTimeout(deb)
-        
-        deb = setTimeout(() => {
+        clearTimeout(deb)        
+        deb = setTimeout(() => { 
             func(...args)
-        }, timer);
-        return 
+        }, timer); 
     }   
 }
 // console.log(deb);/*Timeout {
@@ -21,9 +19,9 @@ function debounce(func,timer) {
 //                   [Symbol(refed)]: true,
 //                   [Symbol(kHasPrimitive)]: false,
 //                   [Symbol(asyncId)]: 8,00
-//                   [Symbol(triggerId)]: 1*/
+                //   [Symbol(triggerId)]: 1*/
 
-// const lo = debounce((msg) => console.log(msg), 500, true);
+// const lo = debounce((msg) => console.log(msg), 500);
 
 // lo("A");
 // lo("B"); 
@@ -31,25 +29,34 @@ function debounce(func,timer) {
 
 function opDebounce(func, timer, leading = false) {
     let id
-    let flag = false;
+    let flag = true;
     return function (...args) {
-        const eventNow = leading && !flag;
+        console.log('-----');
+        
+        const eventNow = leading && flag;
         clearTimeout(id)
         if (eventNow) {
-            flag = true
-            func(...args)
-        }
-        id = setTimeout(() => {
             flag = false
-        }, timer)
-    };
+            func(...args)
+        } 
+            id = setTimeout(() => {
+                flag = true
+                if (!leading) func(...args)
+            }, timer)
+        
+        
+    }
 }
 
-// const log = opDebounce((msg) => console.log(msg), 500,true);
+const log = opDebounce((msg) => console.log(msg), 500,false);
 
-// log("A");
-// log("B"); 
-// log("C");
+log("A");
+log("B"); 
+log("C");
+setTimeout(()=> {
+    log('D')
+    
+},1000) 
 
 // function makeCounter() {
 //     let count = 0
@@ -63,3 +70,4 @@ function opDebounce(func, timer, leading = false) {
 // console.log(c()) 
 // console.log(c()) 
 // console.log(c()) 
+
