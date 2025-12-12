@@ -9,14 +9,14 @@ function flags(obj) {
     if (keys.includes('help')) {
         for (let key of obj['help']) {
             if (obj[key]) {
-                result.description += `-${key[0]}, --${key}: ${obj[key]}, `
+                result.description += `-${key[0]}, --${key}: ${obj[key]}\n`
 
             }
         }
     } else {
          for (let key of keys) {
             console.log(key);
-            result.description += `-${key[0]}, --${key}: ${obj[key]}, `
+            result.description += `-${key[0]}, --${key}: ${obj[key]}\n`
         }
     }
     return result
@@ -29,6 +29,13 @@ console.log(flags({}));
 //   divide: 'divides the values',
 //   help: ['divide','multily']
 // }));
+
+console.log(flags({
+      invert: 'inverts and object',
+      'convert-map': 'converts the object to an array',
+      assign: 'uses the function assign - assign to target object',
+    }))
+  
 
 
 // {
