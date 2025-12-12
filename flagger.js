@@ -1,5 +1,5 @@
 function flags(obj) {
-    let result = {alias:{},description : ''}
+    let result = {alias:{h:'help'},description : ''}
     let keys = Object.keys(obj)
     console.log(keys);
     
@@ -21,6 +21,8 @@ function flags(obj) {
     }
     return result
 }
+
+console.log(flags({}));
 
 // console.log(flags({
 //   multiply: 'multiply the values',
