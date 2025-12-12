@@ -9,14 +9,21 @@ function flags(obj) {
     if (keys.includes('help')) {
         for (let key of obj['help']) {
             if (obj[key]) {
-                result.description += `-${key[0]}, --${key}: ${obj[key]}\n`
+                if (key == obj['help'][obj['help'].length-1]) {
+                    result.description += `-${key[0]}, --${key}: ${obj[key]}`
+                } else {
+                    result.description += `-${key[0]}, --${key}: ${obj[key]}\n`
+                }
 
             }
         }
     } else {
          for (let key of keys) {
-            console.log(key);
-            result.description += `-${key[0]}, --${key}: ${obj[key]}\n`
+            if (key == keys[keys.length-1]) {
+                result.description += `-${key[0]}, --${key}: ${obj[key]}`
+            } else {
+                result.description += `-${key[0]}, --${key}: ${obj[key]}\n`
+            }
         }
     }
     return result
