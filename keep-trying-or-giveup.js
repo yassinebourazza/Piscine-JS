@@ -3,8 +3,9 @@ function retry(count=3,callback = async ()=>{}) {
         try {
             let result = await callback(...args)
             return result
-        } catch {
+        } catch (error) {
             if (count > 0) retry(count-1,callback)(...args)
+            else error 
         }
     }
 }
