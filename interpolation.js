@@ -1,9 +1,9 @@
-function interpolation({steps,start,end,callback,duration}) {
-    let timer = duration / steps
-    let point =(end-start)/ steps
-    for (let i =1; i <= steps;i++) {
+function interpolation({step,start,end,callback,duration}) {
+    let timer = duration / step
+    let point =(end-start)/ step
+    for (let i =1; i <= step;i++) {
         setTimeout(()=>{
-            callback([point,timer*i])            
+            callback([start + point*(i-1),timer*i])            
         },timer*i)
     }
 }
