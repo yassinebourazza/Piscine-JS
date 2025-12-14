@@ -14,10 +14,10 @@ async function getJSON(path,params={}) {
 
     const result = await fetch(url)
     if (result.ok) {
-        throw result.status
+        throw Error(result.status)
     }
     if (result.data) return result.data
-    else if (result.error) throw result.error
+    else if (result.error) throw Error(result.error)
 }
 
 
