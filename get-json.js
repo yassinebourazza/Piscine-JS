@@ -1,24 +1,19 @@
 async function getJSON(path,params={}) {
     let url = path 
-    if (typeof params == 'string') {
-        url += '?' + params
+    if (params) {
+        url += '?' + new URLSearchParams(params).toString()
     }    
-    if (typeof params == 'object' && !Array.isArray(params)) {
-        url += '?'
-        let keys = Object.keys(params)
-        for (let key of keys) {
-            url += key + '=' + params[key] +'&'
-        }
-        url = url.slice(0,-1)
-    }
+    
 
     const result = await fetch(url)
+    let res = result.json()
     if (!result.ok) {
-        throw Error(result.status)
+        throw Error(result.statusText)
     }
-    if (result.data) return result.data
-    else if (result.error) throw Error(result.error)
+    if (res.data) return res.data
+    else if (res.error) throw Error(res.error)
 }
+
 
 
 console.log(getJSON('http:www.facebook.com/test','hello=test'))
