@@ -59,7 +59,7 @@ async function isWinner(country) {
         let data = await db.getWinner(country).catch(()=>null)
         if (!data) throw `${country} never was a winner`
         if (data.continent!= 'Europe') throw `${country} is not what we are looking for because of the continent`
-        data = await db.getResults(data.id)
+        data = await db.getResults(data.id).catch(()=>null)
         if (data.length <3) throw `${country} is not what we are looking for because of the number of times it was champion`
         let results = data.map((obj)=> obj.score)
         let years = data.map((obj)=> obj.year)
