@@ -15,7 +15,7 @@ function opThrottle(func, timer, options = {}) {
         if (!id) {
             if (options.leading) func(...args)
             id = setTimeout(()=> {
-                id = null
+                id = false
                 if (!options.leading) func(...args)
             },timer)
         } 

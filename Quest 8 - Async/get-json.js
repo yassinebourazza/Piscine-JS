@@ -1,8 +1,5 @@
 async function getJSON(path,params={}) {
-    let url = path 
-    if (params) {
-        url += '?' + new URLSearchParams(params)
-    }    
+    let url = path + '?' + new URLSearchParams(params).toString()
     const result = await fetch(url)
     if (!result.ok) {
         throw Error(result.statusText)
@@ -16,3 +13,5 @@ async function getJSON(path,params={}) {
 
 console.log(getJSON('http:www.facebook.com/test','hello=test'))
 console.log(getJSON('http:www.facebook.com/test',{hey:'heel',seter:5}))
+
+
