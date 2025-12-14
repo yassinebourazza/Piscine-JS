@@ -16,14 +16,12 @@ function retry(count=3,callback = async ()=>{}) {
 console.log(await retry(3, async (x)=>x )(1));
 
 function timeout(delay,callback) {
-    return  function(...args) {
-        let res = callback(...args)
-        let pro = new Promise((_,rej)=>{
+    return function(...args) {
+        Promise.all(callback(...args),new Promise((_,rej)=>{
             setTimeout(()=>{
                 rej(Error('timeout'))
             },delay)
-        })
+        }))
         return Promise.race([res,pro])
-       
     }
 }
