@@ -6,10 +6,10 @@ async function getJSON(path,params={}) {
     
 
     const result = await fetch(url)
-    let res = result.json()
     if (!result.ok) {
         throw Error(result.statusText)
     }
+    let res = await result.json()
     if (res.data) return res.data
     else if (res.error) throw Error(res.error)
 }
