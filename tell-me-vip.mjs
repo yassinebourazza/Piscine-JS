@@ -27,7 +27,7 @@ async function tellMeVip(dir) {
         for (let i = 0 ;i < arr.length;i++) {
             list += 1+i +'. ' + arr[i] +'\n'
         }
-        writeFile('vip.txt',list)
+        writeFile('vip.txt',list.slice(0,-1))
 
         
     } catch (error) {
