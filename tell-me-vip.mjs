@@ -23,7 +23,7 @@ try {
     }
     
     for (let i = 0 ;i < arr.length;i++) {
-        // console.log(1+i +'. ' + arr[i]);
+        console.log(1+i +'. ' + arr[i]);
         
     }
     
