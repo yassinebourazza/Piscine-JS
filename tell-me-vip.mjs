@@ -4,12 +4,18 @@ let dir = process.argv[2] || process.cwd()
 try {
     let arr = []
     let files = await readdir(dir)
-    if (files.length<1) {
+    
+    if (files.length==0) {
         console.log('')
     }
     for (let file of files) {
         let name = file.slice(0,file.length-5).split('_')
+        
         let data = await readFile(dir+'/'+file)
+        if (data.length ==0) {
+            continue
+        }
+        
         data = JSON.parse(data)
         if (data.answer == 'yes') {
             arr.push(`${name[1]} ${name[0]}`)
