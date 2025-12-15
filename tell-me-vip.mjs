@@ -5,7 +5,7 @@ try {
     let arr = []
     let files = await readdir(dir)
     if (files.length<1) {
-        return 
+        console.log('')
     }
     for (let file of files) {
         let name = file.slice(0,file.length-5).split('_')
