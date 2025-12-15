@@ -5,9 +5,7 @@ read(path)
 
 async function read(path) {
     let content = await readFile(path, 'utf8')
-    let words = content.split(' ')
-    console.log(words);
-    
+    let words = content.split(' ')    
 let result = ''
 for (let word of words) {
     if (word.length == 1) {
