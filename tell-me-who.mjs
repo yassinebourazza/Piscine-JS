@@ -1,4 +1,4 @@
-import { readdir,readFile } from 'fs/promises'
+import { readdir } from 'fs/promises'
 let dir = process.argv[2] || process.cwd()
 
 try {
