@@ -4,6 +4,9 @@ let dir = process.argv[2] || process.cwd()
 try {
     let arr = []
     let files = await readdir(dir)
+    if (files.length<1) {
+        return 
+    }
     for (let file of files) {
         let name = file.slice(0,file.length-5).split('_')
         let data = await readFile(dir+'/'+file)
