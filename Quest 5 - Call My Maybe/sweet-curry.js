@@ -21,7 +21,3 @@ function sub4(num1) {
         }
     }
 }
-
-// console.log(mult2(2)(4));
-// console.log(add3(2)(4)(4));
-// console.log(sub4(10)(4)(2)(1));

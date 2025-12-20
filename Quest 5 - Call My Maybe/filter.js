@@ -19,6 +19,3 @@ function reject(arr,func) {
 function partition(arr,func) {
     return [filter(arr,func),reject(arr,func)]
 }
-console.log(filter([1,2,3,4,5,6,7,8,9],(x)=> x<5));
-console.log(reject([1,2,3,4,5,6,7,8,9],(x)=> x<5));
-console.log(partition([1,2,3,4,5,6,7,8,9],(x)=> x<5));

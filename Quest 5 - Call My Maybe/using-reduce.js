@@ -14,4 +14,3 @@ function sumOrMul(arr,defu=0) {
 function funcExec(arr,defu=0) {
     return arr.reduce((total,func) => func(total),defu)
 }
-console.log(adder([1, 2, 3, 4]), 10);
