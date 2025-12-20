@@ -6,5 +6,3 @@ function dayOfTheYear(date) {
     
     return(date-theFisrtDay)/1000/60/60/24 + 1
 }
-console.log(dayOfTheYear(new Date('0001-01-01')));
-console.log(dayOfTheYear(new Date('0020-01-05')));

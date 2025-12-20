@@ -8,5 +8,4 @@ function countLeapYears(date) {
     }
     return count
 }
-// console.log(countLeapYears(new Date('1664-08-09'))); //403
 
