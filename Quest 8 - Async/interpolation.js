@@ -7,6 +7,3 @@ function interpolation({step,start,end,callback,duration}) {
         },timer*i)
     }
 }
-
-interpolation({steps:5,start:0,end:1, callback: (x) => console.log(x) ,duration:1000})
-// interpolation({ step: 5, start: 0, end: 4, callback: (x) => console.log(x), duration: 50 })

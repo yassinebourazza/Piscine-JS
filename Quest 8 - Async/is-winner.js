@@ -1,4 +1,3 @@
-
 async function isWinner(country) {    
     try {        
         let data = await db.getWinner(country).catch(()=>null)
@@ -13,8 +12,3 @@ async function isWinner(country) {
         return error
     }
 }
-
-// console.log(isWinner('Morocco').then(console.log))
-// console.log(isWinner('Brazil').then(console.log))
-// console.log(isWinner('France').then(console.log))
-// console.log(isWinner('Italy').then(console.log))

@@ -7,26 +7,6 @@ function debounce(func,timer) {
         }, timer); 
     }   
 }
-// console.log(deb);/*Timeout {
-//                   _idleTimeout: 100,
-//                   _idlePrev: [TimersList],
-//                   _idleNext: [TimersList],
-//                   _idleStart: 15,
-//                   _onTimeout: [Function (anonymous)],
-//                   _timerArgs: undefined,
-//                   _repeat: null,
-//                   _destroyed: false,
-//                   [Symbol(refed)]: true,
-//                   [Symbol(kHasPrimitive)]: false,
-//                   [Symbol(asyncId)]: 8,00
-                //   [Symbol(triggerId)]: 1*/
-
-const lo = debounce((msg) => console.log(msg), 500);
- 
-
-lo("B"); 
-lo("C");
-lo("A",'d');
 
 function opDebounce(func, timer, leading = false) {
     let id
@@ -43,27 +23,3 @@ function opDebounce(func, timer, leading = false) {
         }, timer)  
     }
 }
-
-// const log = opDebounce((msg) => console.log(msg), 500,false);
-
-// log("A");
-// log("B"); 
-// log("C");
-// setTimeout(()=> {
-//     log('D')
-    
-// },1000) 
-
-// function makeCounter() {
-//     let count = 0
-//     return function() {
-//         count++
-//         return count
-//     }
-// }
-
-// const c = makeCounter()
-// console.log(c()) 
-// console.log(c()) 
-// console.log(c()) 
-

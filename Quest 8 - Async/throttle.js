@@ -8,6 +8,7 @@ function throttle(func,timer) {
         },timer)
     }
 }
+
 function opThrottle(func, timer, options = {}) {
     let id
     return function(...args) {
@@ -21,14 +22,3 @@ function opThrottle(func, timer, options = {}) {
         } 
     }
 }
-
-
-// let t = opThrottle((x)=>{console.log(x)},500,{leading:false, trailing:false})
-
-// t('A')
-// t('B')
-// t('C')
-// setTimeout(()=> {
-//         t('d')
-//         t('f')
-// },600)
