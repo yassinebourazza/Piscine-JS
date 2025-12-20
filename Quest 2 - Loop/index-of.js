@@ -24,5 +24,3 @@ function includes(arr, compare,start=0) {
     }
     return false
 }
-
-console.log(lastIndexOf([1, 2, 3, 4, 5, 4, 3, 2, 1], 2));

@@ -21,16 +21,3 @@ function rucersion(obj,paths) {
         return obj[paths[0]]
 }
 
-    "toString"
-  let x = 5
-  const t = (x) => x;
-     console.log(get({ a: [{ b: t }] }, 'a.0.b.toString'));
-console.log(get({ a: [{ b: t }] }, 'a.0.b'));
-console.log(get({ a: [{ b: "hello" }] }, 'a.0.b'));
-console.log(get({ b: "hello" }, 'b'));
-console.log(get({ key: 'value' }, 'nx'));
-console.log(get({ nested: { key: 'value' } }, 'nx.nx'));
-
-console.log(t);
-console.log(t.toString);
-

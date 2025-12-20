@@ -17,9 +17,3 @@ function findExpression(num,str='1') {
     return res
 }
 
-//1 +4
-console.log((findExpression(16)))
-//1 *2 *2 +4
-console.log((findExpression(8)))
-
-

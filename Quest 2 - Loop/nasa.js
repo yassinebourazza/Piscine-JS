@@ -14,5 +14,3 @@ function nasa(number) {
     return str.slice(0,-1)
 }
 
-
-console.log(nasa(15));
