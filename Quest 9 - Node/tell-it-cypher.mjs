@@ -26,7 +26,6 @@ if (method == 'encode') {
         writeFile(filename,res)
     }
 }
-
 console.log(res);
 
 
