@@ -1,5 +1,3 @@
-// const nutrients = {  carbohydrates: 12, protein: 20, fat: 5, vinegar01000:4 }
-
 function filterKeys(obj,regex) {
     let newObj = {}
     let keys = Object.keys(obj)
@@ -30,5 +28,3 @@ function reduceKeys(obj,concat,init='') {
     }
     return str
 }
-
-

@@ -1,12 +1,3 @@
-let arr = {a:1,b:2,c:{d:2}}
-
-console.log(deepCopy({a:1,b:2,c:{d:2}}));
-console.log(deepCopy([1,2,3,[1,2,{a:2,b:3}]]));
-console.log(deepCopy({a:/hello/}));
-console.log(deepCopy([/hello/]));
-console.log(deepCopy([1,'a']));
-
-
 function deepCopy(data) {    
     let result = []
     if (Array.isArray(data)) {

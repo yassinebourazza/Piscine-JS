@@ -21,16 +21,3 @@ function pronoun(str) {
         }
         return res
 }
-
-// const ex = 'Using Array Destructuring, you wr you you can iterate through objects easily.'
-// console.log(pronoun(ex));
-// console.log(pronoun('I buy,\ni to,\nYOU buy,\nit have,\nIt buys,\nit is,\nyou go'))
-// console.log(pronoun(`The seal method seals an object, preventing new properties from being
-//  added to it and marking all existing properties as non-configurable. Values of present 
-// properties can still be changed as long as they are writable.`))
-// console.log(pronoun('we will rock you'));
-
-//   i: { word: ['buy', 'to'], count: 2 },
-//   you: { word: ['buy', 'go'], count: 2 },
-//   it: { word: ['have', 'buys', 'is'], count: 3 },
-  

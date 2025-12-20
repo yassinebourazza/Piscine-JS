@@ -5,7 +5,6 @@ function neuron(arr) {
     }
     let result= {}
     for (let str of arr) {
-        // console.log(str);
         str[0] = str[0].toLowerCase()
         str[1] = str[1].trim()
         str[str.length-1] = str[str.length-1].trim()

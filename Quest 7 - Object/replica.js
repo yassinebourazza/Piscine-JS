@@ -15,6 +15,3 @@ function replica(initial,...objects) {
     }
     return initial
 }
-
-console.log(replica({},{a:{a:'b',b:'c'}},{a:{a:3,b:'c'},b:3},{a:{a:3,b:{a:2}},b:3}));
-console.log(replica({ a: { b: 2 } }, { a: [4] }));

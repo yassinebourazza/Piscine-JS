@@ -1,8 +1,6 @@
 function flags(obj) {
     let result = {alias:{h:'help'},description : ''}
-    let keys = Object.keys(obj)
-    console.log(keys);
-    
+    let keys = Object.keys(obj)    
     for (let key of keys) [
         result.alias[key[0]] = key,
     ]
@@ -28,24 +26,3 @@ function flags(obj) {
     }
     return result
 }
-
-console.log(flags({}));
-
-// console.log(flags({
-//   multiply: 'multiply the values',
-//   divide: 'divides the values',
-//   help: ['divide','multily']
-// }));
-
-console.log(flags({
-      invert: 'inverts and object',
-      'convert-map': 'converts the object to an array',
-      assign: 'uses the function assign - assign to target object',
-    }))
-  
-
-
-// {
-//   alias: { h: 'help', m: 'multiply', d: 'divide'}
-//   description: '-d, --divide: divides the values',
-// }

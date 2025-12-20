@@ -1,20 +1,3 @@
-// console.log(defaultCurry({
-//   http: 403,
-//   connection: 'close',
-//   contentType: 'multipart/form-data',
-// })({
-//   http: 200,
-//   connection: 'open',
-//   requestMethod: 'GET'
-// }))
-// // output
-// // {
-// //     http: 200,
-// //     connection: 'open',
-// //     contentType: 'multipart/form-data',
-// //     requestMethod: 'GET'
-// // }
-
 function defaultCurry(obj1) {
     return function(obj2) {
         let res = {}
@@ -33,16 +16,6 @@ function defaultCurry(obj1) {
     }
 }
 
-// // output
-// const personnel = {
-//   lukeSkywalker_force: { id: 5,  pilotingScore: 98, shootingScore: 56, isForceUser: true  },
-//   sabineWren_force:    { id: 82, pilotingScore: 73, shootingScore: 99, isForceUser: false },
-//   zebOrellios_force:   { id: 22, pilotingScore: 20, shootingScore: 59, isForceUser: false },
-//   ezraBridger_force:   { id: 15, pilotingScore: 43, shootingScore: 67, isForceUser: true  },
-//   calebDume_force:     { id: 11, pilotingScore: 71, shootingScore: 85, isForceUser: true  },
-// }
-// console.log(mapCurry(([k, v]) => [`${k}_force`, v])(personnel))
-
 function mapCurry(func) {
     return function(obj) {
         let res = {}
@@ -53,9 +26,6 @@ function mapCurry(func) {
         return res
     }
 }
-
-// console.log(reduceCurry((acc, [k, v]) => (acc += v))({ a: 1, b: 2, c: 3 }, 0))
-// // output == 6
 
 function reduceCurry(func) {
     return function(obj,acc) {
@@ -72,13 +42,6 @@ function reduceCurry(func) {
     }
 }
 
-// console.log(filterCurry(([k, v]) => typeof v === 'string' || k === 'arr')({
-//   str: 'string',
-//   nbr: 1,
-//   arr: [1, 2],
-// }))
-// // output { str: 'string', arr: [1, 2] }
-
 function filterCurry(func) {
     return function(obj) {
         let GlobalKeyVal = Object.entries(obj)
@@ -90,17 +53,6 @@ function filterCurry(func) {
     }
 }
 
-// prettier-ignore
-const personnel = {
-  lukeSkywalker: { id: 5,  pilotingScore: 98, shootingScore: 56, isForceUser: true  },
-  sabineWren:    { id: 82, pilotingScore: 73, shootingScore: 99, isForceUser: false },
-  zebOrellios:   { id: 22, pilotingScore: 20, shootingScore: 59, isForceUser: false },
-  ezraBridger:   { id: 15, pilotingScore: 43, shootingScore: 67, isForceUser: true  },
-  calebDume:     { id: 11, pilotingScore: 71, shootingScore: 85, isForceUser: true  },
-}
-
-// console.log(reduceScore(personnel, 0));
-
 function reduceScore(objects,acc) {
     if (acc ==undefined) acc =0
     let keys = Object.entries(objects)
@@ -111,8 +63,6 @@ function reduceScore(objects,acc) {
     }
     return acc
 }
-// console.log(filterForce(personnel));
-
 
 function filterForce(objects) {
     let res = {}
@@ -124,9 +74,6 @@ function filterForce(objects) {
     }
     return res
 }
-
-console.log(mapAverage(personnel));
-
 
 function mapAverage(objects) {
     let res= {}

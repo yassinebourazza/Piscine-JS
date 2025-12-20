@@ -23,8 +23,3 @@ function omit(obj,arr) {
     }
     return newObj
 }
-
-// console.log(pick({a:2,b:3,c:4}, 'a'));
-// console.log(pick({a:false,b:3,c:4}, ["a","b"]));
-// console.log(omit({a:2,b:3,c:4}, 'a'));
-// console.log(omit({a:2,b:3,c:4}, ["a","b"]));

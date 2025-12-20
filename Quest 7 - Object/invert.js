@@ -6,5 +6,3 @@ function invert(obj) {
     }
     return newObj
 }
-
-// console.log(invert({y:'1',x:'2'}))
