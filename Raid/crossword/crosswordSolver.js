@@ -8,7 +8,6 @@ const emptyPuzzle = `2000
 0...`
 const words = ['casa',  'ciao']
 crosswordSolver(emptyPuzzle, words)
-
 // this is the main function 
 function crosswordSolver(puzzle, words) {
 
