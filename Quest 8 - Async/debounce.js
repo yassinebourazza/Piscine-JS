@@ -22,6 +22,7 @@ function debounce(func,timer) {
                 //   [Symbol(triggerId)]: 1*/
 
 const lo = debounce((msg) => console.log(msg), 500);
+ 
 
 lo("B"); 
 lo("C");

@@ -43,10 +43,7 @@ export function moveCircle() {
                 div.style.left = boxPosition.x+boxPosition.width-1-50 + 'px'
             }
         }
-        
     })
-    
-
 }
 export function setBox() {
     let box = document.createElement('box')
